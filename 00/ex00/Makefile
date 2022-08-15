@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lguillau <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/14 14:08:21 by lguillau          #+#    #+#              #
-#    Updated: 2022/06/14 14:09:52 by lguillau         ###   ########.fr        #
+#    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
+#    Updated: 2022/08/15 11:42:40 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES	=	megaphone.cpp \
+FILES	=	megaphone.cpp
 
-S_PATH	=	srcs/
+S_PATH	=	
 O_PATH	=	objs/
 I_PATH	=	includes/
 
@@ -21,7 +21,7 @@ OBJS	=	${addprefix ${O_PATH}, ${FILES:.cpp=.o}}
 
 NAME	=	megaphone
 
-CC	=	clang
+CC	=	c++
 
 RM	=	rm -rf
 
