@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 12:00:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/08/21 13:33:55 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/08/30 19:56:35 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,11 +90,25 @@ class PhoneBook
 	private:;
 		Contact	library[8];
 		int	i;
+		int	j;
 		int	count;
 	public:
 		PhoneBook()
 		{
 			count = 0;
+		}
+		void	truncate_add_space(string str)
+		{
+			if (str.length() > 9)
+				cout << str.substr(0, 9) + ".";
+			else
+			{
+				j = -1;
+				while (++i < (int)(10 - str.length()))
+					cout << " ";
+				cout << str;
+			}
+			cout << "|";
 		}
 		void	print_contact_list(void)
 		{
@@ -102,28 +116,11 @@ class PhoneBook
 			string	str;
 			while (library[++i].get_first_name().length() != 0)
 			{
-				cout << endl << "     " << i << "    |";
-				str = library[i].get_last_name();
-				if (str.length() > 10)
-				{
-					str[10] = '.';
-					str[11] = 0;
-				}
-				cout << str << " | ";
-				str = library[i].get_first_name();
-				if (str.length() > 10)
-				{
-					str[10] = '.';
-					str[11] = 0;
-				}
-				cout << str << " | ";
-				str = library[i].get_nickname();
-				if (str.length() > 10)
-				{
-					str[10] = '.';
-					str[11] = 0;
-				}
-				cout << str << endl;
+				cout << "         " << i << "|";
+				truncate_add_space(library[i].get_last_name());
+				truncate_add_space(library[i].get_first_name());
+				truncate_add_space(library[i].get_nickname());
+				cout << endl;
 			}
 		}
 		void	add(t_info *c)
