@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 12:00:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/08/30 19:56:35 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/08/30 19:59:20 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ class PhoneBook
 			else
 			{
 				j = -1;
-				while (++i < (int)(10 - str.length()))
+				while (++j < (int)(10 - str.length()))
 					cout << " ";
 				cout << str;
 			}
