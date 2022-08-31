@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 12:17:27 by lguillau          #+#    #+#             */
-/*   Updated: 2022/08/21 13:12:55 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/08/30 22:34:52 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,26 @@ int	main(void)
 	
 	while (1)
 	{
+		cout << "~> ";
 		cin >> command;
 		if (command == "ADD")
 		{
-			cout << "First name:";
+			cout << "First name: ";
 			cin >> info.first_name;
-			cout << endl;
-			cout << "Last name:";
+			cout << "Last name: ";
 			cin >> info.last_name;
-			cout << endl;
-			cout << "Nickname:";
+			cout << "Nickname: ";
 			cin >> info.nickname;
-			cout << endl;
-			cout << "Phone number:";
+			cout << "Phone number: ";
 			cin >> info.phone_number;
-			cout << endl;
-			cout << "Darkest secret:";
+			cout << "Darkest secret: ";
 			cin >> info.darkest_secret;
-			cout << endl;
 			library.add(&info);
 
 		}
-		if (command == "DISPLAY")
+		if (command == "SEARCH")
 		{
-			library.print_contact_list();
+			library.search();
 		}
 		if (command == "EXIT")
 			exit(0);

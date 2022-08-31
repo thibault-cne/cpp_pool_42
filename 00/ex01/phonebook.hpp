@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 12:00:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/08/30 19:59:20 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/08/30 22:55:34 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,13 @@ class Contact
 		string	nickname;
 
 	public:
-	/*	Contact()
-		{
-			first_name = NULL;
-			last_name = NULL;
-			phone_number = NULL;
-			darkest_secret = NULL;
-			nickname = NULL;
-		}*/
 		string	get_first_name()
 		{
 			return (first_name);
 		}
 		string	get_nickname()
 		{
-			return (first_name);
+			return (nickname);
 		}
 		string	get_last_name()
 		{
@@ -60,7 +52,7 @@ class Contact
 		}
 		void	set_nickname(string str)
 		{
-			first_name = str;
+			nickname = str;
 		}
 		void	set_last_name(string str)
 		{
@@ -92,6 +84,7 @@ class PhoneBook
 		int	i;
 		int	j;
 		int	count;
+		string	index;
 	public:
 		PhoneBook()
 		{
@@ -116,9 +109,9 @@ class PhoneBook
 			string	str;
 			while (library[++i].get_first_name().length() != 0)
 			{
-				cout << "         " << i << "|";
-				truncate_add_space(library[i].get_last_name());
+				cout << i << "|";
 				truncate_add_space(library[i].get_first_name());
+				truncate_add_space(library[i].get_last_name());
 				truncate_add_space(library[i].get_nickname());
 				cout << endl;
 			}
@@ -134,10 +127,31 @@ class PhoneBook
 			library[count].set_nickname(c->nickname);
 			count++;
 		}
-	/*	void	search(string str)
+		void	display_one(string index)
 		{
+			cout << "First name: " << library[index[0] - 48].get_first_name() << endl;
+			cout << "Last name: " << library[index[0] - 48].get_last_name() << endl;
+			cout << "Nickname: " << library[index[0] - 48].get_nickname() << endl;
+			cout << "Phone number: " << library[index[0] - 48].get_phone_number() << endl;
+			cout << "Darkest secret: " << library[index[0] - 48].get_darkest_secret() << endl;
+		}
+		void	search(void)
+		{
+			if (library[0].get_first_name().length() == 0)
+			{
+				cout << "No entry available in the phonebook" << endl;
+				return ;
+			}
 			print_contact_list();
-		}*/
+			cout << "Enter the index of the entry to display: ";
+			cin >> index;
+			if (index.length() > 1 || index[0] - 48 > 8 || index[0] - 48 < 0)
+			{
+				cout << "This index is not available" << endl;
+				return ;
+			}
+			display_one(index);
+		}
 };
 
 #endif
