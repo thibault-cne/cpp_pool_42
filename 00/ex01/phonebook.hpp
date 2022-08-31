@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 12:00:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/08/30 22:55:34 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/08/31 19:40:07 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,9 @@ class PhoneBook
 		{
 			i = -1;
 			string	str;
-			while (library[++i].get_first_name().length() != 0)
+			while (++i < 8)
 			{
-				cout << i << "|";
+				cout << i + 1 << "|";
 				truncate_add_space(library[i].get_first_name());
 				truncate_add_space(library[i].get_last_name());
 				truncate_add_space(library[i].get_nickname());
@@ -129,11 +129,11 @@ class PhoneBook
 		}
 		void	display_one(string index)
 		{
-			cout << "First name: " << library[index[0] - 48].get_first_name() << endl;
-			cout << "Last name: " << library[index[0] - 48].get_last_name() << endl;
-			cout << "Nickname: " << library[index[0] - 48].get_nickname() << endl;
-			cout << "Phone number: " << library[index[0] - 48].get_phone_number() << endl;
-			cout << "Darkest secret: " << library[index[0] - 48].get_darkest_secret() << endl;
+			cout << "First name: " << library[index[0] - 49].get_first_name() << endl;
+			cout << "Last name: " << library[index[0] - 49].get_last_name() << endl;
+			cout << "Nickname: " << library[index[0] - 49].get_nickname() << endl;
+			cout << "Phone number: " << library[index[0] - 49].get_phone_number() << endl;
+			cout << "Darkest secret: " << library[index[0] - 49].get_darkest_secret() << endl;
 		}
 		void	search(void)
 		{
@@ -144,8 +144,9 @@ class PhoneBook
 			}
 			print_contact_list();
 			cout << "Enter the index of the entry to display: ";
-			cin >> index;
-			if (index.length() > 1 || index[0] - 48 > 8 || index[0] - 48 < 0)
+			if (!getline(cin, index))
+				return ;
+			if (index.length() > 1 || index[0] - 48 > 8 || index[0] - 48 < 1)
 			{
 				cout << "This index is not available" << endl;
 				return ;
