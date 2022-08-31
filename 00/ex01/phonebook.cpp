@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 12:17:27 by lguillau          #+#    #+#             */
-/*   Updated: 2022/08/30 22:34:52 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/08/31 02:25:36 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,25 @@ int	main(void)
 	while (1)
 	{
 		cout << "~> ";
-		cin >> command;
+		if (!getline(cin, command))
+			return (0);
 		if (command == "ADD")
 		{
 			cout << "First name: ";
-			cin >> info.first_name;
+			if (!getline(cin, info.first_name))
+				return (0);
 			cout << "Last name: ";
-			cin >> info.last_name;
+			if (!getline(cin, info.last_name))
+				return (0);
 			cout << "Nickname: ";
-			cin >> info.nickname;
+			if (!getline(cin, info.nickname))
+				return (0);
 			cout << "Phone number: ";
-			cin >> info.phone_number;
+			if (!getline(cin, info.phone_number))
+				return (0);
 			cout << "Darkest secret: ";
-			cin >> info.darkest_secret;
+			if (!getline(cin, info.darkest_secret))
+				return (0);
 			library.add(&info);
 
 		}
@@ -42,7 +48,7 @@ int	main(void)
 			library.search();
 		}
 		if (command == "EXIT")
-			exit(0);
+			return (0);
 
 	}
 }
