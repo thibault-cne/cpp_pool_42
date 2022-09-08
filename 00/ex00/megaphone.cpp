@@ -6,15 +6,14 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:09:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/08/14 21:03:56 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/08 11:59:37 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-using namespace std;
 
-void	print_strings(string str)
+void	print_strings(std::string str)
 {
 	int	i;
 
@@ -24,7 +23,7 @@ void	print_strings(string str)
 		if (str[i] >= 'a' && str[i] <= 'z')
 			str[i] -= 32;
 	}
-	cout << str;
+	std::cout << str;
 }
 
 int	main(int ac, char **av)
@@ -33,9 +32,9 @@ int	main(int ac, char **av)
 
 	i = 0;
 	if (ac == 1)
-		return (cout << "* LOUD AND UNBEARBLE FEEDBACK NOISE *" << endl, 0);
+		return (std::cout << "* LOUD AND UNBEARBLE FEEDBACK NOISE *" << std::endl, 0);
 	while (av[++i])
 		print_strings(av[i]);
-	cout << endl;
+	std::cout << std::endl;
 	return (0);
 }

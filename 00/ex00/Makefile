@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/08/15 11:42:40 by lguillau         ###   ########.fr        #
+#    Updated: 2022/09/08 11:57:04 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJS	=	${addprefix ${O_PATH}, ${FILES:.cpp=.o}}
 
 NAME	=	megaphone
 
-CC	=	c++
+CC	=	g++
 
 RM	=	rm -rf
 
