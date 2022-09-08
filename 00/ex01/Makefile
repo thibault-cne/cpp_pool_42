@@ -6,11 +6,14 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/08/16 16:31:50 by lguillau         ###   ########.fr        #
+#    Updated: 2022/09/08 12:33:54 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES	=	phonebook.cpp
+FILES	=	main.cpp\
+		PhoneBook.cpp\
+		Contact.cpp\
+			
 
 S_PATH	=	
 O_PATH	=	objs/

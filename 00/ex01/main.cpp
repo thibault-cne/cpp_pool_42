@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 12:17:27 by lguillau          #+#    #+#             */
-/*   Updated: 2022/08/31 19:47:40 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/08 12:33:44 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "header.hpp"
 
 int	check_empty(t_info *info)
 {
 	if (info->first_name.length() == 0 || info->phone_number.length() == 0 
 		|| info->nickname.length() == 0 || info->last_name.length() == 0 
 		|| info->darkest_secret.length() == 0)
-		return (cout << "At least one field is empty please retry" << endl, 0); 
+		return (std::cout << "At least one field is empty please retry" << std::endl, 0); 
 	return (1);
 }
 
@@ -76,30 +76,30 @@ int	check_empty(t_info *info)
 int	main(void)
 {
 	PhoneBook	library;
-	string	command;
+	std::string	command;
 	t_info	info;
 	
 	while (1)
 	{
-		cout << "~> ";
-		if (!getline(cin, command))
+		std::cout << "~> ";
+		if (!getline(std::cin, command))
 			return (0);
 		if (command == "ADD")
 		{
-			cout << "First name: ";
-			if (!getline(cin, info.first_name))
+			std::cout << "First name: ";
+			if (!getline(std::cin, info.first_name))
 				return (0);
-			cout << "Last name: ";
-			if (!getline(cin, info.last_name))
+			std::cout << "Last name: ";
+			if (!getline(std::cin, info.last_name))
 				return (0);
-			cout << "Nickname: ";
-			if (!getline(cin, info.nickname))
+			std::cout << "Nickname: ";
+			if (!getline(std::cin, info.nickname))
 				return (0);
-			cout << "Phone number: ";
-			if (!getline(cin, info.phone_number))
+			std::cout << "Phone number: ";
+			if (!getline(std::cin, info.phone_number))
 				return (0);
-			cout << "Darkest secret: ";
-			if (!getline(cin, info.darkest_secret))
+			std::cout << "Darkest secret: ";
+			if (!getline(std::cin, info.darkest_secret))
 				return (0);
 			if (check_empty(&info))
 				library.add(&info);
