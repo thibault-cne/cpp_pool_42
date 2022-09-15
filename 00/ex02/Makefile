@@ -6,12 +6,12 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/09/15 17:43:38 by lguillau         ###   ########.fr        #
+#    Updated: 2022/09/15 19:39:17 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES	=	Account.cpp \
-		test.cpp
+		tests.cpp
 
 S_PATH	=	
 O_PATH	=	objs/
@@ -20,7 +20,7 @@ I_PATH	=	includes/
 SRCS	=	${addprefix ${S_PATH}, ${FILES}}
 OBJS	=	${addprefix ${O_PATH}, ${FILES:.cpp=.o}}
 
-NAME	=	test
+NAME	=	test.exe
 
 CC	=	g++
 
