@@ -6,11 +6,12 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 12:23:30 by lguillau          #+#    #+#             */
-/*   Updated: 2022/09/14 16:52:44 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/19 14:33:43 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
+#include <iomanip>
 
 PhoneBook::PhoneBook()
 {
@@ -20,15 +21,13 @@ PhoneBook::PhoneBook()
 
 void	PhoneBook::truncate_add_space(std::string str)
 {
+	std::cout << std::setw(10);
 	if (str.length() > 9)
-		std::cout << str.substr(0, 9) + ".";
-	else	
 	{
-		j = -1;
-		while (++j < (int)(10 - str.length()))
-			std::cout << " ";
-		std::cout << str;
+		str.resize(9);
+		str.resize(10, '.');
 	}
+	std::cout << str;
 	std::cout << "|";
 }
 

@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/09/15 19:39:17 by lguillau         ###   ########.fr        #
+#    Updated: 2022/09/19 14:36:45 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CC	=	g++
 
 RM	=	rm -rf
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 ${O_PATH}%.o:	${S_PATH}%.cpp
 		@mkdir -p ${dir $@}

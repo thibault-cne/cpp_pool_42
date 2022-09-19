@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:09:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/09/08 11:59:37 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/16 00:59:47 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_strings(std::string str)
 	while (str[++i])
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
+			str[i] = toupper(str[i]);
 	}
 	std::cout << str;
 }
