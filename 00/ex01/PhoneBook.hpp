@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 12:00:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/09/23 10:45:25 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:08:38 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class PhoneBook
 		int	count;
 		std::string	index;
 	public:
-		PhoneBook();
+		PhoneBook(void);
+		~PhoneBook(void);
 		void	truncate_add_space(std::string str);
 		void	print_contact_list(void);
 		void	display_one(std::string index);

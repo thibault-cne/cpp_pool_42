@@ -6,11 +6,21 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 12:23:45 by lguillau          #+#    #+#             */
-/*   Updated: 2022/09/14 14:57:52 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:10:01 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
+
+Contact::Contact()
+{
+	return ;
+}
+
+Contact::~Contact()
+{
+	return ;
+}
 
 std::string	Contact::get_first_name() const
 {

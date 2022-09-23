@@ -6,17 +6,23 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 12:23:30 by lguillau          #+#    #+#             */
-/*   Updated: 2022/09/19 14:33:43 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:08:23 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
 #include <iomanip>
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook(void)
 {
 	std::cout << "PhoneBook created" << std::endl;
 	count = 0;
+	return ;
+}
+
+PhoneBook::~PhoneBook(void)
+{
+	return ;
 }
 
 void	PhoneBook::truncate_add_space(std::string str)

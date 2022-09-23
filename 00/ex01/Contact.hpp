@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 12:12:50 by lguillau          #+#    #+#             */
-/*   Updated: 2022/09/14 14:58:36 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:09:17 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class Contact
 		std::string	nickname;
 
 	public:
+		Contact(void);
+		~Contact(void);
 		std::string	get_first_name() const;
 		std::string	get_nickname() const;
 		std::string	get_last_name() const;
