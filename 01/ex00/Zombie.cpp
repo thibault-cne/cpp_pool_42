@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:33:19 by lguillau          #+#    #+#             */
-/*   Updated: 2022/09/19 18:45:54 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/23 10:42:58 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Zombie::~Zombie(void)
 	return ;
 }
 
-void	Zombie::announce(void)
+void	Zombie::announce(void) const
 {
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 	return ;

@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:28:34 by lguillau          #+#    #+#             */
-/*   Updated: 2022/09/19 18:56:44 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/23 10:42:46 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie
 	Zombie(std::string name);
 	~Zombie(void);
 	
-	void	announce(void);
+	void	announce(void) const;
 
 	private:
 	
