@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:42:08 by lguillau          #+#    #+#             */
-/*   Updated: 2022/09/26 11:36:02 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:54:11 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Weapon
 	public:
 
 		Weapon(std::string type);
+		Weapon(void);
 		~Weapon(void);
 
 		void		setType(std::string type);
