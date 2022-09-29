@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/09/19 19:01:48 by lguillau         ###   ########.fr        #
+#    Updated: 2022/09/29 12:01:30 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJS	=	${addprefix ${O_PATH}, ${FILES:.cpp=.o}}
 
 NAME	=	zombie
 
-CC	=	g++
+CC	=	c++
 
 RM	=	rm -rf
 

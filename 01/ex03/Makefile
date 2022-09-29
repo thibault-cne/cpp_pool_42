@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/09/26 12:00:41 by lguillau         ###   ########.fr        #
+#    Updated: 2022/09/29 12:02:05 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS	=	${addprefix ${O_PATH}, ${FILES:.cpp=.o}}
 
 NAME	=	a.out
 
-CC	=	g++
+CC	=	c++
 
 RM	=	rm -rf
 
