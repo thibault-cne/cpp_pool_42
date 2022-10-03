@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/09/29 16:04:10 by lguillau         ###   ########.fr        #
+#    Updated: 2022/10/03 11:08:20 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ I_PATH	=	includes/
 SRCS	=	${addprefix ${S_PATH}, ${FILES}}
 OBJS	=	${addprefix ${O_PATH}, ${FILES:.cpp=.o}}
 
-NAME	=	megaphone
+NAME	=	a.out
 
 CC	=	g++
 
