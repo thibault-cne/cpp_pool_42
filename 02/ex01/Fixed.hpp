@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 15:46:02 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/03 14:15:40 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:09:59 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <cmath>
+# include <bitset>
 
 class Fixed
 {

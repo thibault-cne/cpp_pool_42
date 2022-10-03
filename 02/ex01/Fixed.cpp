@@ -6,11 +6,12 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:00:20 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/03 14:16:39 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:31:06 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <string>
 
 Fixed::Fixed()
 {
@@ -39,6 +40,10 @@ Fixed::~Fixed()
 	return ;
 }
 
+Fixed::Fixed(const int nb)
+{
+	std::string binary = std::bitset<_b>(nb).to_string();
+}
 
 int	Fixed::getRawBits(void) const
 {

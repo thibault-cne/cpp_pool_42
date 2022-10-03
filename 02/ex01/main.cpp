@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 12:27:02 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/03 13:43:50 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:10:48 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@
 
 int main(void)
 {
-	Fixed a;
+	Fixed a(42);
 
-	std::cout << "a is " << a << std::endl;
+	//std::cout << "a is " << a << std::endl;
 
 }
