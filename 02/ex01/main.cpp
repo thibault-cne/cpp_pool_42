@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 12:27:02 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/03 15:10:48 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/05 20:11:29 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,19 @@
 }
 */
 
+std::string toBinary(int n)
+{
+    std::string r;
+    while(n!=0) {r=(n%2==0 ?"0":"1")+r; n/=2;}
+    return r;
+}
+
 int main(void)
 {
-	Fixed a(42);
+	Fixed a(-42);
 
-	//std::cout << "a is " << a << std::endl;
+	std::cout << "a is " << a << std::endl;
+	std::cout << "a in binary is " << toBinary(a.getRawBits()) << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 
 }

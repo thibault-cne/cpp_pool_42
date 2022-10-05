@@ -6,12 +6,11 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:00:20 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/03 15:31:06 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/05 19:58:46 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <string>
 
 Fixed::Fixed()
 {
@@ -42,7 +41,8 @@ Fixed::~Fixed()
 
 Fixed::Fixed(const int nb)
 {
-	std::string binary = std::bitset<_b>(nb).to_string();
+	std::cout << "Int constructor called" << std::endl;
+	_a = (nb << _b);
 }
 
 int	Fixed::getRawBits(void) const
@@ -54,6 +54,14 @@ void	Fixed::setRawBits(int const raw)
 {
 	this->_a = raw;
 	return ;
+}
+
+int	Fixed::toInt() const
+{
+	int	ret;
+
+	ret = _a >> _b;
+	return (ret);
 }
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &f)
