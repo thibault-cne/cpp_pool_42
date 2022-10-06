@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 15:46:02 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/06 11:49:13 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:02:20 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Fixed
 	private:
 
 		int			_a;
-		static const int	_b = 2;
+		static const int	_b = 8;
 };
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &f);

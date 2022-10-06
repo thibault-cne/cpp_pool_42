@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 12:27:02 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/06 13:03:09 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/06 16:01:31 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 int	main(void)
 {
-	Fixed (a)
+	const Fixed a(42);
+	const Fixed b(43);
+
+	Fixed c(0);
+	std::cout << Fixed::min(a, b) << std::endl;
 	return (0);	
 }
