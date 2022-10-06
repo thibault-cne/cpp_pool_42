@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:00:20 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/05 19:58:46 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/06 11:40:26 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ Fixed::Fixed(const int nb)
 	_a = (nb << _b);
 }
 
+Fixed::Fixed(const float nb)
+{
+	_a = roundf(nb * pow(2, _b));
+}
+
 int	Fixed::getRawBits(void) const
 {
 	return (this->_a);
@@ -58,14 +63,17 @@ void	Fixed::setRawBits(int const raw)
 
 int	Fixed::toInt() const
 {
-	int	ret;
+	return (_a >> _b);
+}
 
-	ret = _a >> _b;
-	return (ret);
+
+float	Fixed::toFloat() const
+{
+	return ((float)_a / (float)pow(2, _b));
 }
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &f)
 {
-	os << f.getRawBits();
+	os << (float)f.toFloat();
 	return (os);
 }
