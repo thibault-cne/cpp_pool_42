@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:00:20 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/06 15:59:14 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/11 17:51:43 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,33 @@ Fixed	Fixed::operator/(const Fixed &b)
 
 /* ************************************************************************** */
 
+Fixed	Fixed::operator++(void)
+{
+	++this->_a;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(void)
+{
+	--this->_a;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	tmp = *this;
+
+	tmp._a++;
+	return (tmp);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	tmp = *this;
+
+	tmp._a--;
+	return (tmp);
+}
 
 /* ************************************************************************** */
 
