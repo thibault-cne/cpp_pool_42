@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:00:20 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/11 17:51:43 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/24 18:56:14 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,24 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
 	this->_a = 0;
 	return ;
 }
 
 Fixed::Fixed(const Fixed &f)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = f;
 	return ;
 }
 
 Fixed	&Fixed::operator=(const Fixed &f)
 {
-	std::cout << "Copy assignement operator called" << std::endl;
 	this->_a  = f.getRawBits();
 	return (*this);
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
@@ -109,26 +105,30 @@ bool	Fixed::operator!=(const Fixed &b)
 
 Fixed	Fixed::operator+(const Fixed &b)
 {
-	this->_a += b.getRawBits();
-	return (*this);
+	Fixed fixed(this->toFloat() + b.toFloat());
+
+	return (fixed);
 }
 
 Fixed	Fixed::operator-(const Fixed &b)
 {
-	this->_a -= b.getRawBits();
-	return (*this);
+	Fixed fixed(this->toFloat() - b.toFloat());
+
+	return (fixed);
 }
 
 Fixed	Fixed::operator*(const Fixed &b)
 {
-	this->_a *= b.getRawBits();
-	return (*this);
+	Fixed fixed(this->toFloat() * b.toFloat());
+
+	return (fixed);
 }
 
 Fixed	Fixed::operator/(const Fixed &b)
 {
-	this->_a /= b.getRawBits();
-	return (*this);
+	Fixed fixed(this->toFloat() / b.toFloat());
+
+	return (fixed);
 }
 
 
@@ -148,18 +148,18 @@ Fixed	Fixed::operator--(void)
 
 Fixed	Fixed::operator++(int)
 {
-	Fixed	tmp = *this;
+	Fixed	fixed = *this;
 
-	tmp._a++;
-	return (tmp);
+	this->_a++;
+	return (fixed);
 }
 
 Fixed	Fixed::operator--(int)
 {
-	Fixed	tmp = *this;
+	Fixed	fixed = *this;
 
-	tmp._a--;
-	return (tmp);
+	this->_a--;
+	return (fixed);
 }
 
 /* ************************************************************************** */
