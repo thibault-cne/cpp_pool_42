@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:00:20 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/24 18:56:14 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:43:56 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,22 +73,22 @@ float	Fixed::toFloat() const
 
 bool	Fixed::operator>(const Fixed &b)
 {
-	return (this->_a > b.getRawBits());
+	return (this->toFloat() > b.toFloat());
 }
 
 bool	Fixed::operator<(const Fixed &b)
 {
-	return (this->_a < b.getRawBits());
+	return (this->toFloat() < b.toFloat());
 }
 
 bool	Fixed::operator>=(const Fixed &b)
 {
-	return (this->_a >= b.getRawBits());
+	return (this->toFloat() >= b.toFloat());
 }
 
 bool	Fixed::operator<=(const Fixed &b)
 {
-	return (this->_a >= b.getRawBits());
+	return (this->toFloat() <= b.toFloat());
 }
 
 bool	Fixed::operator==(const Fixed &b)
@@ -98,7 +98,7 @@ bool	Fixed::operator==(const Fixed &b)
 
 bool	Fixed::operator!=(const Fixed &b)
 {
-	return (this->_a >= b.getRawBits());
+	return (this->_a != b.getRawBits());
 }
 
 /* ************************************************************************** */
@@ -166,22 +166,22 @@ Fixed	Fixed::operator--(int)
 
 Fixed	Fixed::max(Fixed &a, Fixed &b)
 {
-	return (a.getRawBits() > b.getRawBits() ? a : b);
+	return (a > b ? a : b);
 }
 
 Fixed	Fixed::min(Fixed &a, Fixed &b)
 {
-	return (a.getRawBits() < b.getRawBits() ? a : b);
+	return (a < b ? a : b);
 }
 
 Fixed	Fixed::max(Fixed const &a, Fixed const &b)
 {
-	return (a.getRawBits() > b.getRawBits() ? a : b);
+	return (a.toFloat() > b.toFloat() ? a : b);
 }
 
 Fixed	Fixed::min(Fixed const &a, Fixed const &b)
 {
-	return (a.getRawBits() < b.getRawBits() ? a : b);
+	return (a.toFloat() < b.toFloat() ? a : b);
 }
 
 /* ************************************************************************** */
