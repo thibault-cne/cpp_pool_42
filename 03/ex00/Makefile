@@ -6,12 +6,12 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/10/25 13:39:21 by lguillau         ###   ########.fr        #
+#    Updated: 2022/10/25 15:46:51 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES	=	main.cpp \
-		ClapTrapp.cpp
+		ClapTrap.cpp
 
 S_PATH	=	
 O_PATH	=	objs/

@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:59:47 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/25 14:57:09 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/25 15:56:16 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ ClapTrap::ClapTrap(std::string str)
 {
 	COUT "Default constructor called" ENDL;
 	this->_name = str;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 	return ;
 }
 
@@ -33,6 +36,12 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &c)
 	this->_energyPoints = c.getEnergyPoints();
 	this->_attackDamage = c.getAttackDamage();
 	this->_hitPoints = c.getHitPoints();
+	return (*this);
+}
+
+ClapTrap::~ClapTrap()
+{
+	COUT "Destructor called" ENDL;
 	return ;
 }
 
@@ -62,12 +71,32 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		COUT "ClapTrap " << this->getName() << " is already dead!" ENDL;
 		return ;
 	}
-		COUT "ClapTrap " << this->getName() << " takes " << amount << " damage!" ENDL;
-
+	if (amount > this->_hitPoints)
+		_hitPoints = 0;
+	else
+		_hitPoints -= amount;
+	COUT "ClapTrap " << this->getName() << " takes " << amount << " damage! "
+			<< this->getHitPoints() << " left" ENDL;
+	return ;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->getHitPoints() == 0)
+	{
+		COUT "ClapTrap " << this->getName() << " is dead! he can't be repaired" ENDL;
+		return ;
+	}
+	if (this->getEnergyPoints() == 0)
+	{
+		COUT "ClapTrap " << this->getName() << " has no energy! he can't be repaired" ENDL;
+		return ;
+	}
+	this->_hitPoints += amount;
+	this->_energyPoints--;
+	COUT "ClapTrap " << this->getName() << " gets " << amount << " hp restored! now at -> "
+			<< this->getHitPoints() ENDL;
+	return ;
 }
 
 std::string	ClapTrap::getName(void) const
