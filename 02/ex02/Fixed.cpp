@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:00:20 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/25 11:43:56 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/25 13:06:11 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,22 +73,22 @@ float	Fixed::toFloat() const
 
 bool	Fixed::operator>(const Fixed &b)
 {
-	return (this->toFloat() > b.toFloat());
+	return (this->_a > b.getRawBits());
 }
 
 bool	Fixed::operator<(const Fixed &b)
 {
-	return (this->toFloat() < b.toFloat());
+	return (this->_a < b.getRawBits());
 }
 
 bool	Fixed::operator>=(const Fixed &b)
 {
-	return (this->toFloat() >= b.toFloat());
+	return (this->_a >= b.getRawBits());
 }
 
 bool	Fixed::operator<=(const Fixed &b)
 {
-	return (this->toFloat() <= b.toFloat());
+	return (this->_a <= b.getRawBits());
 }
 
 bool	Fixed::operator==(const Fixed &b)
@@ -176,12 +176,12 @@ Fixed	Fixed::min(Fixed &a, Fixed &b)
 
 Fixed	Fixed::max(Fixed const &a, Fixed const &b)
 {
-	return (a.toFloat() > b.toFloat() ? a : b);
+	return (a.getRawBits() > b.getRawBits() ? a : b);
 }
 
 Fixed	Fixed::min(Fixed const &a, Fixed const &b)
 {
-	return (a.toFloat() < b.toFloat() ? a : b);
+	return (a.getRawBits() < b.getRawBits() ? a : b);
 }
 
 /* ************************************************************************** */
