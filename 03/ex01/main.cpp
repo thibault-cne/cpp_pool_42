@@ -6,14 +6,14 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:42:25 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/25 17:12:46 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:51:22 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 int	main(void)
 {
-	ScavTrap a();
+	ScavTrap a("Tata");
 }

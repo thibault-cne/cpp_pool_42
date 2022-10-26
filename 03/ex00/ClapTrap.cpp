@@ -6,19 +6,21 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:59:47 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/25 15:56:16 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:42:44 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string str)
+ClapTrap::ClapTrap() : _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	COUT "Default constructor called" ENDL;
-	this->_name = str;
-	this->_hitPoints = 10;
-	this->_energyPoints = 10;
-	this->_attackDamage = 0;
+	COUT "Default Constructor called" ENDL;
+	return ;
+}
+
+ClapTrap::ClapTrap(std::string s) : _name(s), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+{
+	COUT "Constructor called" ENDL;
 	return ;
 }
 
@@ -117,4 +119,24 @@ unsigned int	ClapTrap::getEnergyPoints(void) const
 unsigned int	ClapTrap::getAttackDamage(void) const
 {
 	return (this->_attackDamage);
+}
+
+void	ClapTrap::setName(std::string str)
+{
+	this->_name = str;
+}
+
+void	ClapTrap::setHitPoints(unsigned int amount)
+{
+	this->_hitPoints = amount;
+}
+
+void	ClapTrap::setEnergyPoints(unsigned int amount)
+{
+	this->_energyPoints = amount;
+}
+
+void	ClapTrap::setAttackDamage(unsigned int amount)
+{
+	this->_attackDamage = amount;
 }
