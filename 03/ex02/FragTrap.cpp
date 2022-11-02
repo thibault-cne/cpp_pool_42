@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:10:17 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/27 18:07:06 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:02:22 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap()
+FragTrap::FragTrap()
 {
-	COUT "ScavTrap default construtor callled" ENDL;
+	COUT "FragTrap default construtor callled" ENDL;
 	this->setName("");
 	this->setAttackDamage(30);
 	this->setHitPoints(100);
@@ -22,9 +22,9 @@ ScavTrap::ScavTrap()
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string s)
+FragTrap::FragTrap(std::string s)
 {
-	COUT "ScavTrap constructor called" ENDL;
+	COUT "FragTrap constructor called" ENDL;
 	this->setName(s);
 	this->setAttackDamage(30);
 	this->setHitPoints(100);
@@ -32,14 +32,14 @@ ScavTrap::ScavTrap(std::string s)
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &s) : ClapTrap(s)
+FragTrap::FragTrap(FragTrap const &s) : ClapTrap(s)
 {
-	COUT "ScavTrap copy construtor called" ENDL;
+	COUT "FragTrap copy construtor called" ENDL;
 	*this = s;
 	return ;
 }
 
-ScavTrap	&ScavTrap::operator=(const ScavTrap &s)
+FragTrap	&FragTrap::operator=(const FragTrap &s)
 {
 	COUT "Copy assignement operator called" ENDL;
 	this->setName(s.getName());
@@ -49,42 +49,42 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &s)
 	return (*this);
 }
 
-ScavTrap::~ScavTrap()
+FragTrap::~FragTrap()
 {
-	COUT "ScavTrap desctructor callled" ENDL;
+	COUT "FragTrap desctructor callled" ENDL;
 }
 
-void	ScavTrap::attack(std::string const &target)
+void	FragTrap::attack(std::string const &target)
 {
 	if (this->getHitPoints() == 0)
 	{
-		COUT "ScavTrap " << this->getName() << " is dead! he can't attack" ENDL;
+		COUT "FragTrap " << this->getName() << " is dead! he can't attack" ENDL;
 		return ;
 	}
 	if (this->getEnergyPoints() == 0)
 	{
-		COUT "ScavTrap " << this->getName() << " has no energy! he can't attack" ENDL;
+		COUT "FragTrap " << this->getName() << " has no energy! he can't attack" ENDL;
 		return ;
 	}
-	COUT "ScavTrap " << this->getName() << " hits " << target
+	COUT "FragTrap " << this->getName() << " hits " << target
 			 << ", dealing " << this->getAttackDamage()
 			 << " points of damge!" ENDL;
 	this->setEnergyPoints(this->getEnergyPoints() - 1);
 	return ;
 }
 
-void	ScavTrap::guardGate(void)
+void	FragTrap::guardGate(void)
 {
 	if (this->getHitPoints() == 0)
 	{
-		COUT "ScavTrap " << this->getName() << " is dead! he can't gate keep" ENDL;
+		COUT "FragTrap " << this->getName() << " is dead! he can't gate keep" ENDL;
 		return ;
 	}
 	if (this->getEnergyPoints() == 0)
 	{
-		COUT "ScavTrap " << this->getName() << " has no energy! he can't gate keep" ENDL;
+		COUT "FragTrap " << this->getName() << " has no energy! he can't gate keep" ENDL;
 		return ;
 	}
-	COUT "ScavTrap is entering gate keeeper mode!" ENDL;
+	COUT "FragTrap is entering gate keeeper mode!" ENDL;
 	this->setEnergyPoints(this->getEnergyPoints() - 1);
 }	
