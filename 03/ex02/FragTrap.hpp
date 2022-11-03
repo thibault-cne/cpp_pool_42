@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:02:49 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/02 18:02:53 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:33:08 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ class FragTrap : public ClapTrap
 		FragTrap	&operator=(const FragTrap &s);
 		~FragTrap();
 
-		void	guardGate(void);
-		void	attack(const std::string &target);
-	
+		void	highFiveGuys(void);
 	private:
 };
 

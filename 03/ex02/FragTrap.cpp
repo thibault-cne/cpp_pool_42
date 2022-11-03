@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:10:17 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/02 18:02:22 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:34:37 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,37 +54,7 @@ FragTrap::~FragTrap()
 	COUT "FragTrap desctructor callled" ENDL;
 }
 
-void	FragTrap::attack(std::string const &target)
+void	FragTrap::highFiveGuys(void)
 {
-	if (this->getHitPoints() == 0)
-	{
-		COUT "FragTrap " << this->getName() << " is dead! he can't attack" ENDL;
-		return ;
-	}
-	if (this->getEnergyPoints() == 0)
-	{
-		COUT "FragTrap " << this->getName() << " has no energy! he can't attack" ENDL;
-		return ;
-	}
-	COUT "FragTrap " << this->getName() << " hits " << target
-			 << ", dealing " << this->getAttackDamage()
-			 << " points of damge!" ENDL;
-	this->setEnergyPoints(this->getEnergyPoints() - 1);
-	return ;
+	COUT this->getName() << " ask for a high five!" ENDL;
 }
-
-void	FragTrap::guardGate(void)
-{
-	if (this->getHitPoints() == 0)
-	{
-		COUT "FragTrap " << this->getName() << " is dead! he can't gate keep" ENDL;
-		return ;
-	}
-	if (this->getEnergyPoints() == 0)
-	{
-		COUT "FragTrap " << this->getName() << " has no energy! he can't gate keep" ENDL;
-		return ;
-	}
-	COUT "FragTrap is entering gate keeeper mode!" ENDL;
-	this->setEnergyPoints(this->getEnergyPoints() - 1);
-}	

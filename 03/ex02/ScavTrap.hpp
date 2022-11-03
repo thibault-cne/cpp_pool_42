@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 15:42:25 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/03 18:35:46 by lguillau         ###   ########.fr       */
+/*   Created: 2022/10/25 17:02:49 by lguillau          #+#    #+#             */
+/*   Updated: 2022/10/27 18:07:48 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int	main(void)
+class ScavTrap : public ClapTrap
 {
-	ScavTrap a("Tata");
-	FragTrap b("Toto");
+	public:
 
-	a.attack("b");
-	a.takeDamage(50);
-	a.guardGate();
-	a.beRepaired(10);
-	b.attack("b");
-	b.takeDamage(50);
-	b.highFiveGuys();
-	b.beRepaired(10);
-}
+		ScavTrap();
+		ScavTrap(std::string s);
+		ScavTrap(ScavTrap const &s);
+		ScavTrap	&operator=(const ScavTrap &s);
+		~ScavTrap();
+
+		void	guardGate(void);
+		void	attack(const std::string &target);
+	
+	private:
+};
+
+#endif
+
