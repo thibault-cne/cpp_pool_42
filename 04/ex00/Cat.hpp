@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 19:27:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/03 18:53:39 by lguillau         ###   ########.fr       */
+/*   Created: 2022/11/03 18:53:43 by lguillau          #+#    #+#             */
+/*   Updated: 2022/11/03 19:07:27 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-int	main(void)
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-	return (0);
-}
+	public:
+
+		Cat();
+		Cat(const Cat &src);
+		Cat	&operator=(const Cat &src);
+		~Cat();
+
+		void	makeSound(void);
+	private:
+};
+
+#endif
