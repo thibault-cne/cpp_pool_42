@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 19:04:02 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 14:12:33 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:32:55 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ Cat::~Cat()
 Cat	&Cat::operator=(const Cat &src)
 {
 	this->setType(src.getType());
-	this->brain = new Brain();
-	this->brain = src.brain;
+	this->brain = new Brain(*src.brain);
 	return (*this);
 }
 

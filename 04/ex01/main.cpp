@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:27:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 14:57:37 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:42:25 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ int	main(void)
 		std::cout << std::endl;
 		std::cout << std::endl;
 		std::cout << std::endl;
-	Dog basic;
+	Cat basic;
 	{
 		std::cout << std::endl;
-		Dog tmp = basic;
+		Cat tmp = Cat(basic);
 	}
-		std::cout << std::endl;
+	std::cout << std::endl;
 	return (0);
 }
