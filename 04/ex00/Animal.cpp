@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:58:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 12:02:56 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:33:01 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void	Animal::setType(std::string type)
 
 void	Animal::makeSound(void) const
 {
-	std::cout << "* Animal Sound *" << std::endl;
+	std::cout << "*Animal Sound*" << std::endl;
 	return ;
 }

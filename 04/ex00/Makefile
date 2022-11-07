@@ -6,7 +6,7 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/11/03 18:53:14 by lguillau         ###   ########.fr        #
+#    Updated: 2022/11/07 12:30:43 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ FILES	=	main.cpp \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 
 S_PATH	=	
 O_PATH	=	objs/

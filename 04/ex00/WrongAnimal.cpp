@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:58:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 12:25:05 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:33:15 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void	WrongAnimal::setType(std::string type)
 
 void	WrongAnimal::makeSound(void) const
 {
-	std::cout << "* WrongAnimal Sound *" << std::endl;
+	std::cout << "*WrongAnimal Sound*" << std::endl;
 	return ;
 }
