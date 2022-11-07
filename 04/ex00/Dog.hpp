@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:53:43 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/03 19:08:49 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:15:30 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Dog : public Animal
 		Dog	&operator=(const Dog &src);
 		~Dog();
 
-		void	makeSound(void);
+		virtual void	makeSound(void) const;
 	private:
 };
 
