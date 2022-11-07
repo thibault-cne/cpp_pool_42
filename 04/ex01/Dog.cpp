@@ -6,16 +6,18 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 19:04:02 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 12:07:22 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:59:03 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 Dog::Dog()
 {
 	std::cout << "Dog Constructor called" << std::endl;
 	this->setType("Dog");
+	this->brain = new Brain();
 	return ;
 }
 
@@ -29,12 +31,15 @@ Dog::Dog(const Dog &src) : Animal(src)
 Dog::~Dog()
 {
 	std::cout << "Dog destructor called" << std::endl;
+	delete this->brain;
 	return ;
 }
 
 Dog	&Dog::operator=(const Dog &src)
 {
 	this->setType(src.getType());
+	//this->brain = new Brain();
+	this->brain = new Dog();
 	return (*this);
 }
 

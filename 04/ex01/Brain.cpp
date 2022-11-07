@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:50:23 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 13:02:54 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:22:26 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,14 @@ Brain	&Brain::operator=(const Brain &src)
 	return (*this);
 }
 
-std::string	&Brain::getIdeas(void) const
+std::string	*Brain::getIdeas(void) const
 {
-	return (this->_ideas);
+	return ((std::string *)this->_ideas);
+}
+
+void	Brain::setOneIdea(int id, std::string idea)
+{
+	if (id >= 0 && id < 100)
+		this->_ideas[id] = idea;
+	return ;
 }

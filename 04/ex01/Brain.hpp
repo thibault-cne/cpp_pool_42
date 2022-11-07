@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:40:12 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 13:03:20 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:20:59 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class Brain
 		~Brain();
 		Brain	&operator=(const Brain &src);
 
-		std::string	&getIdeas(void) const;
+		std::string	*getIdeas(void) const;
+		void	setOneIdea(int id, std::string idea);
 	private:
 		std::string	_ideas[100];
 };

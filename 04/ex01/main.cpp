@@ -6,30 +6,51 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:27:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 12:57:22 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:57:37 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#define NB 10
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int	main(void)
 {
-	{
-		std::cout <<"-Animal-" << std::endl;
-		const Animal* meta = new Animal();
-		const Animal* j = new Dog();
-		const Animal* i = new Cat();
+	const Animal *meta[NB];
+	int	i = -1;
 
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		std::cout << "Cat sound: ";
-		i->makeSound(); 
-		std::cout << "Dog sound: ";
-		j->makeSound();
-		std::cout << "Animal sound: ";
-		meta->makeSound();
+
+	std::cout << std::endl << "====Construtors calls====" << std::endl;
+	std::cout << std::endl << "=Dogs=" << std::endl;
+	while (++i < NB / 2)
+	{
+		meta[i] = new Dog();
+		std::cout << std::endl;
 	}
+	std::cout << std::endl << "=Cats=" << std::endl;
+	i--;
+	while (++i < NB)
+	{
+		meta[i] = new Cat();
+		std::cout << std::endl;
+	}
+
+	std::cout << std::endl << "====Destructor calls===" << std::endl << std::endl;
+	i = -1;
+	while (++i < NB)
+	{
+		delete meta[i];
+		std::cout << std::endl;
+	}
+		std::cout << std::endl;
+		std::cout << std::endl;
+		std::cout << std::endl;
+	Dog basic;
+	{
+		std::cout << std::endl;
+		Dog tmp = basic;
+	}
+		std::cout << std::endl;
 	return (0);
 }

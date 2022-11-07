@@ -6,16 +6,18 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 19:04:02 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 12:15:10 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:12:33 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 Cat::Cat()
 {
 	std::cout << "Cat Constructor called" << std::endl;
 	this->setType("Cat");
+	this->brain = new Brain();
 	return ;
 }
 
@@ -29,12 +31,15 @@ Cat::Cat(const Cat &src) : Animal(src)
 Cat::~Cat()
 {
 	std::cout << "Cat destructor called" << std::endl;
+	delete this->brain;
 	return ;
 }
 
 Cat	&Cat::operator=(const Cat &src)
 {
 	this->setType(src.getType());
+	this->brain = new Brain();
+	this->brain = src.brain;
 	return (*this);
 }
 

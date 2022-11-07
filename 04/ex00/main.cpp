@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:27:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 12:32:28 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:14:00 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ int	main(void)
 		j->makeSound();
 		std::cout << "Animal sound: ";
 		meta->makeSound();
+		delete j;
+		delete i;
+		delete meta;
 	}
 	{
 		std::cout << std::endl << "-Wrong Animal-" << std::endl;
@@ -43,6 +46,8 @@ int	main(void)
 		i->makeSound(); 
 		std::cout << "WrongAnimal sound: ";
 		meta->makeSound();
+		delete i;
+		delete meta;
 	}
 
 	return (0);
