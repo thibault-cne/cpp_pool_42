@@ -6,11 +6,11 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:27:48 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/07 18:56:14 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:49:52 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define NB 1000
+#define NB 2
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
@@ -44,14 +44,5 @@ int	main(void)
 		delete meta[i];
 		std::cout << std::endl;
 	}
-		std::cout << std::endl;
-		std::cout << std::endl;
-		std::cout << std::endl;
-	Cat basic;
-	{
-		std::cout << std::endl;
-		Cat tmp = Cat(basic);
-	}
-	std::cout << std::endl;
 	return (0);
 }
