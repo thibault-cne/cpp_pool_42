@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:08 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/08 18:23:54 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:52:49 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	main(void)
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << "Bureaucrat: Grade too hight" << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << "Bureaucrat: Grade too low" << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	/* valid bureacrat */
 	try
@@ -36,11 +36,11 @@ int	main(void)
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << "Bureaucrat: Grade too hight" << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << "Bureaucrat: Grade too low" << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	/* try increment */
 	try
@@ -51,11 +51,11 @@ int	main(void)
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << "Bureaucrat: Grade too hight" << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << "Bureaucrat: Grade too low" << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	/* try decrement */
 	try
@@ -66,11 +66,11 @@ int	main(void)
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << "Bureaucrat: Grade too hight" << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << "Bureaucrat: Grade too low" << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	return (0);
 }
