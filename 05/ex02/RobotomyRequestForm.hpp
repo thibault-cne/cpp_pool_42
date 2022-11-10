@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:56:08 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 18:07:35 by lguillau         ###   ########.fr       */
+/*   Created: 2022/11/10 17:59:28 by lguillau          #+#    #+#             */
+/*   Updated: 2022/11/10 18:07:10 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#ifndef RobotomyRequestForm_HPP
+#define RobotomyRequestForm_HPP
 
-int	main(void)
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+
+class RobotomyRequestForm : public AForm
 {
-	return (0);
-}
+	public:
+	
+	RobotomyRequestForm();
+	RobotomyRequestForm(std::string target);
+	RobotomyRequestForm(const RobotomyRequestForm &src);
+	virtual ~RobotomyRequestForm();
+
+	RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
+
+	virtual void	execute(const Bureaucrat &executor);
+	
+	private:
+};
+
+#endif
