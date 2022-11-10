@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:55:12 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 17:57:51 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:09:15 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ class AForm
 	int	getExecGrade(void) const;
 	bool	getSigned(void) const;
 
-	virtual void	beSigned(const Bureaucrat &src) = 0;
+	void	beSigned(const Bureaucrat &src);
+	virtual void	execute(const Bureaucrat &executor) = 0;
 
 	class GradeTooLowException : public std::exception
 	{

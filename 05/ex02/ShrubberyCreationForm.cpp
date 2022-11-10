@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:56:08 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 18:10:10 by lguillau         ###   ########.fr       */
+/*   Created: 2022/11/10 18:27:51 by lguillau          #+#    #+#             */
+/*   Updated: 2022/11/10 18:28:44 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-int	main(void)
+ShrubberyCreationForm::ShrubberyCreationForm()
 {
-	AForm a();
-	return (0);
 }

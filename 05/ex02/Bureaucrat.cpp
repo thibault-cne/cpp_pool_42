@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:34 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 16:47:54 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/10 18:10:44 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	Bureaucrat::decGrade(void)
 	return ;
 }
 
-void	Bureaucrat::signForm(const Form &src)
+void	Bureaucrat::signForm(const AForm &src)
 {
 	if (this->_grade > src.getSignGrade())
 	{
