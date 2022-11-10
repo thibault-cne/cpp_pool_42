@@ -6,11 +6,12 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 16:55:11 by lguillau          #+#    #+#              #
-#    Updated: 2022/11/08 16:55:33 by lguillau         ###   ########.fr        #
+#    Updated: 2022/11/10 16:10:16 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES	=	main.cpp \
+		Form.cpp \
 		Bureaucrat.cpp \
 
 S_PATH	=	

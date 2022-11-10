@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:55:12 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/08 19:51:24 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:14:40 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define FORM_HPP
 
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -31,7 +33,7 @@ class Form
 	int	getExecGrade(void) const;
 	bool	getSigned(void) const;
 
-	void	beSigned(Bureaucrat &src);
+	void	beSigned(const Bureaucrat &src);
 
 	class GradeTooLowException : public std::exception
 	{

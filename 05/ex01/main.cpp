@@ -6,63 +6,52 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:08 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/08 18:52:49 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/10 16:22:04 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {
-	/* invalid bureacrat */
 	try
 	{
-		Bureaucrat a("Toto", 0);
+		Form a("B21", 70, 700);
 		std::cout << a << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException &e)
+	catch (Form::GradeTooHighException &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException &e)
+	catch (Form::GradeTooLowException &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	/* valid bureacrat */
+	std::cout << std::endl;
 	try
 	{
-		Bureaucrat b("Tata", 1);
+		Form a("B21", 70, 70);
+		Form aa("B22", 30, 30);
+		std::cout << a << std::endl;
+		std::cout << aa << std::endl;
+		Bureaucrat b("Toto", 55);
 		std::cout << b << std::endl;
+		b.signForm(a);
+		a.beSigned(b);
+		std::cout << a << std::endl;
+		b.signForm(aa);
+		aa.beSigned(b);
+		std::cout << aa << std::endl;
+
 	}
-	catch (Bureaucrat::GradeTooHighException &e)
+	catch (Form::GradeTooHighException &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException &e)
+	catch (Form::GradeTooLowException &e)
 	{
 		std::cout << e.what() << std::endl;
-	}
-	/* try increment */
-	try
-	{
-		Bureaucrat b("Tata", 1);
-		b.incGrade();
-		std::cout << b << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	/* try decrement */
-	try
-	{
-		Bureaucrat b("Tata", 1);
-		b.decGrade();
-		std::cout << b << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
