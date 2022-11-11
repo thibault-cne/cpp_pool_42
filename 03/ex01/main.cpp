@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:42:25 by lguillau          #+#    #+#             */
-/*   Updated: 2022/10/27 18:09:39 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:18:31 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int	main(void)
 	a.attack("b");
 	a.takeDamage(50);
 	a.beRepaired(10);
+	a.guardGate();
 }
