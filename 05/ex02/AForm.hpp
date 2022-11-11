@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:55:12 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 18:09:15 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:37:32 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class AForm
 	int	getSignGrade(void) const;
 	int	getExecGrade(void) const;
 	bool	getSigned(void) const;
+
+	void	setSigned(bool i);
 
 	void	beSigned(const Bureaucrat &src);
 	virtual void	execute(const Bureaucrat &executor) = 0;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:34 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 17:58:22 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:38:11 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,12 @@ std::string	AForm::getName(void) const
 bool	AForm::getSigned(void) const
 {
 	return (this->_signed);
+}
+
+void	AForm::setSigned(bool i)
+{
+	this->_signed = i;
+	return ;
 }
 
 /* ************* */

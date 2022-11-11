@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:59:28 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 18:07:15 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 12:29:55 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class ShrubberyCreationForm : public AForm
 	public:
 	
 	ShrubberyCreationForm();
-	ShrubberyCreationForm(std::string target);
+	ShrubberyCreationForm(std::string n, std::string t);
 	ShrubberyCreationForm(const ShrubberyCreationForm &src);
 	virtual ~ShrubberyCreationForm();
 
@@ -30,6 +30,8 @@ class ShrubberyCreationForm : public AForm
 	virtual void	execute(const Bureaucrat &executor);
 	
 	private:
+
+	std::string	_target;
 };
 
 #endif
