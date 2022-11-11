@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:08 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/11 14:15:02 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:07:04 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,22 @@
 int	main(void)
 {
 	ShrubberyCreationForm	a("b21", "U");
-	Bureaucrat b("A", 1);
+	Bureaucrat b("A", 100);
 
-	a.execute(b);
+	try {
+	//	a.beSigned(b);
+		std::cout << a << std::endl;
+		a.execute(b);
+	}
+	catch (const std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	/*catch (AForm::GradeTooLowException &e) {
+		std::cout << e.what() << std::endl;
+	}
+	catch (AForm::NotSignedException &e) {
+		std::cout << e.what() << std::endl;
+	}*/
 	
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:34 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/11 12:38:11 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:07:19 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,11 @@ const char	*AForm::GradeTooLowException::what() const throw()
 const char	*AForm::GradeTooHighException::what() const throw()
 {
 	return ("GradeTooHighException");
+}
+
+const char	*AForm::NotSignedException::what() const throw()
+{
+	return ("FormNotSignedException");
 }
 
 /* *********** */

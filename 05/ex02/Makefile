@@ -6,13 +6,14 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 16:55:11 by lguillau          #+#    #+#              #
-#    Updated: 2022/11/11 12:59:18 by lguillau         ###   ########.fr        #
+#    Updated: 2022/11/11 15:25:52 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES	=	main.cpp \
 		AForm.cpp \
 		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
 		Bureaucrat.cpp \
 
 S_PATH	=	

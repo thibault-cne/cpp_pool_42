@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:27:51 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/11 15:11:16 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:26:55 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include <fstream>
-#define	SCF ShrubberyCreationForm
+#include "RobotomyRequestForm.hpp"
+#include <random>
+
+#define	RRF RobotomyRequestForm
+#define EX 45
+#define SI 75
 
 /* Constructors */
 
-SCF::SCF() : AForm("ShrubberyCreationForm", 145, 137)
+RRF::RRF() : AForm("RobotomyRequestForm", SI, EX)
 {
 	this->_target = "Default";
 	this->setSigned(false);
@@ -24,25 +27,25 @@ SCF::SCF() : AForm("ShrubberyCreationForm", 145, 137)
 }
 
 
-SCF::SCF(std::string target) : AForm("ShrubberyCreationForm", 145, 137)
+RRF::RRF(std::string target) : AForm("RobotomyRequestForm", SI, EX)
 {
 	this->_target = target;
 	this->setSigned(false);
 	return ;
 }
 
-SCF::SCF(const SCF &src) : AForm(src)
+RRF::RRF(const RRF &src) : AForm(src)
 {
 	*this = src;
 	return ;
 }
 
-SCF::~SCF()
+RRF::~RRF()
 {
 	return ;
 }
 
-SCF	&SCF::operator=(const SCF &src)
+RRF	&RRF::operator=(const RRF &src)
 {
 	this->setSigned(src.getSigned());
 	return (*this);
@@ -50,32 +53,15 @@ SCF	&SCF::operator=(const SCF &src)
 
 /* ************** */
 
-void	SCF::execute(const Bureaucrat &executor)
+void	RRF::execute(const Bureaucrat &executor)
 {
-	if (executor.getGrade() > 137)
+	if (executor.getGrade() > EX)
 		throw AForm::GradeTooLowException();
 	if(!this->getSigned())
 		throw AForm::NotSignedException();
+	std::srand(std::time(NULL));
+	int	rVar = std::rand() + RAND_MAX + 1;
 
-	std::string	filename;
-
-	filename = this->_target += "_shrubbery";
-
-	std::ofstream	cfs(filename.c_str());
-	if (!cfs)
-	{
-		std::cout << "Error: Couldn't create "<< filename << std::endl;
-		return ;
-	}
-	cfs << "       _-_" << std::endl;
-	cfs << "    /~~   ~~\\" << std::endl;
-	cfs << " /~~         ~~\\" << std::endl;
-	cfs << "{               }" << std::endl;
-	cfs << " \\  _-     -_  /" << std::endl;
-	cfs << "   ~  \\\\ //  ~" << std::endl;
-	cfs << "_- -   | | _- _" << std::endl;
-	cfs << "  _ -  | |   -_" << std::endl;
-	cfs << "      // \\\\" << std::endl;
-	cfs.close();
+	std::cout << rVar << std::endl;
 	return ;
 }

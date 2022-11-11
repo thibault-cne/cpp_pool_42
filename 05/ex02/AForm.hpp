@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:55:12 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/11 12:37:32 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:00:58 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ class AForm
 			const char *what() const throw();
 	};
 	class GradeTooHighException : public std::exception
+	{
+		public:
+			const char *what() const throw();
+	};
+	class NotSignedException : public std::exception
 	{
 		public:
 			const char *what() const throw();
