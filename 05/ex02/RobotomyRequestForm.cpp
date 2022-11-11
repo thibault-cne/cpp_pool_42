@@ -6,12 +6,13 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:27:51 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/11 15:26:55 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:41:25 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-#include <random>
+#include <stdlib.h>
+#include <time.h>
 
 #define	RRF RobotomyRequestForm
 #define EX 45
@@ -59,9 +60,18 @@ void	RRF::execute(const Bureaucrat &executor)
 		throw AForm::GradeTooLowException();
 	if(!this->getSigned())
 		throw AForm::NotSignedException();
-	std::srand(std::time(NULL));
-	int	rVar = std::rand() + RAND_MAX + 1;
+	srand(time(NULL));
+	int	rVar = rand() % 2 + 1;
 
-	std::cout << rVar << std::endl;
+	if (rVar == 1)
+	{
+		std::cout << "Brrrrr Brrrrrrr Brrrrrrrrrrrrrrrr" << std::endl;
+		std::cout << this->_target << " has been robotomised" << std::endl;
+	}
+	else
+	{
+		std::cout << "Brrrrrrrrrr Brrrrr Brrr..." << std::endl;
+		std::cout << "couldn't robotomised " << this->_target << std::endl;
+	}
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:59:28 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/11 15:27:53 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:26:47 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class RobotomyRequestForm : public AForm
 	
 	private:
 
-	std::string const _target;
+	std::string _target;
 };
 
 #endif
