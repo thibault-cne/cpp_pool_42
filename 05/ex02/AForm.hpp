@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:55:12 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/14 12:00:19 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:23:24 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class AForm
 	void	setSigned(bool i);
 
 	void	beSigned(const Bureaucrat &src);
-	virtual void	execute(const Bureaucrat &executor) = 0;
+	virtual void	execute(const Bureaucrat &executor)const  = 0;
 
 	class GradeTooLowException : public std::exception
 	{

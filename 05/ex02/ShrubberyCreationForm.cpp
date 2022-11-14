@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:27:51 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/11 15:11:16 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:26:38 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ SCF	&SCF::operator=(const SCF &src)
 
 /* ************** */
 
-void	SCF::execute(const Bureaucrat &executor)
+void	SCF::execute(const Bureaucrat &executor) const
 {
 	if (executor.getGrade() > 137)
 		throw AForm::GradeTooLowException();
@@ -59,7 +59,7 @@ void	SCF::execute(const Bureaucrat &executor)
 
 	std::string	filename;
 
-	filename = this->_target += "_shrubbery";
+	filename = this->_target + "_shrubbery";
 
 	std::ofstream	cfs(filename.c_str());
 	if (!cfs)

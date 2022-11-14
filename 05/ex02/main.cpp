@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:08 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/14 12:02:55 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:28:17 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 int	main(void)
 {
 	ShrubberyCreationForm	a("Target");
-	Bureaucrat b("A", 150);
+	Bureaucrat b("A", 1);
 
 	try {
 		b.signForm(a);
 		std::cout << a << std::endl;
-		a.execute(b);
+		b.executeForm(a);
 	}
 	catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;
@@ -33,7 +33,7 @@ int	main(void)
 
 	try {
 		b.signForm(e);
-		e.execute(b);
+		b.executeForm(e);
 	}
 	catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;
@@ -44,13 +44,13 @@ int	main(void)
 	try {
 		g.signForm(f);
 		std::cout << f << std::endl;
-		f.execute(g);
+		g.executeForm(f);
 	}
 	catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 	try {
-		f.execute(b);
+		b.executeForm(f);
 	}
 	catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:27:51 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/14 11:40:43 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:23:39 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ PPF	&PPF::operator=(const PPF &src)
 
 /* ************** */
 
-void	PPF::execute(const Bureaucrat &executor)
+void	PPF::execute(const Bureaucrat &executor) const
 {
 	if (executor.getGrade() > EX)
 		throw AForm::GradeTooLowException();

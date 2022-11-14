@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:27:51 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/11 16:41:25 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:25:26 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ RRF	&RRF::operator=(const RRF &src)
 
 /* ************** */
 
-void	RRF::execute(const Bureaucrat &executor)
+void	RRF::execute(const Bureaucrat &executor) const
 {
 	if (executor.getGrade() > EX)
 		throw AForm::GradeTooLowException();

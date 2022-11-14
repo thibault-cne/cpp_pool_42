@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:34 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/14 12:01:24 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:26:58 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,23 @@ void	Bureaucrat::signForm(AForm &src)
 	}
 }
 
+void	Bureaucrat::executeForm(const AForm &AForm)
+{
+	try {
+		AForm.execute(*this);
+		std::cout << getName() << " executed " << AForm.getName() << std::endl;
+
+	}
+	catch (const AForm::GradeTooLowException &e) {
+		std::cout << getName() << " couldn't execute " << AForm.getName()
+			<< " because his grade is too low" << std::endl;
+	}
+	catch (const AForm::NotSignedException &e) {
+		std::cout << getName() << " couldn't execute " << AForm.getName()
+			<< " because form is not signed" << std::endl;
+	}
+}
+
 const char	*Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("GradeTooLowException");
@@ -95,6 +112,6 @@ const char	*Bureaucrat::GradeTooHighException::what() const throw()
 
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat &src)
 {
-	os << src.getName() << " his grade " << src.getGrade();
+	os << src.getName() << " is grade " << src.getGrade();
 	return (os);
 }
