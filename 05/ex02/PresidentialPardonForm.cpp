@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 18:27:51 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/11 16:41:25 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 11:40:43 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
-#include <stdlib.h>
-#include <time.h>
+#include "PresidentialPardonForm.hpp"
 
-#define	RRF RobotomyRequestForm
-#define EX 45
-#define SI 75
+#define	PPF PresidentialPardonForm
+#define EX 5
+#define SI 25
 
 /* Constructors */
 
-RRF::RRF() : AForm("RobotomyRequestForm", SI, EX)
+PPF::PPF() : AForm("PresidentialPardonForm", SI, EX)
 {
 	this->_target = "Default";
 	this->setSigned(false);
@@ -28,25 +26,25 @@ RRF::RRF() : AForm("RobotomyRequestForm", SI, EX)
 }
 
 
-RRF::RRF(std::string target) : AForm("RobotomyRequestForm", SI, EX)
+PPF::PPF(std::string target) : AForm("PresidentialPardonForm", SI, EX)
 {
 	this->_target = target;
 	this->setSigned(false);
 	return ;
 }
 
-RRF::RRF(const RRF &src) : AForm(src)
+PPF::PPF(const PPF &src) : AForm(src)
 {
 	*this = src;
 	return ;
 }
 
-RRF::~RRF()
+PPF::~PPF()
 {
 	return ;
 }
 
-RRF	&RRF::operator=(const RRF &src)
+PPF	&PPF::operator=(const PPF &src)
 {
 	this->setSigned(src.getSigned());
 	return (*this);
@@ -54,24 +52,12 @@ RRF	&RRF::operator=(const RRF &src)
 
 /* ************** */
 
-void	RRF::execute(const Bureaucrat &executor)
+void	PPF::execute(const Bureaucrat &executor)
 {
 	if (executor.getGrade() > EX)
 		throw AForm::GradeTooLowException();
 	if(!this->getSigned())
 		throw AForm::NotSignedException();
-	srand(time(NULL));
-	int	rVar = rand() % 2 + 1;
-
-	if (rVar == 1)
-	{
-		std::cout << "Brrrrr Brrrrrrr Brrrrrrrrrrrrrrrr" << std::endl;
-		std::cout << this->_target << " has been robotomised" << std::endl;
-	}
-	else
-	{
-		std::cout << "Brrrrrrrrrr Brrrrr Brrr..." << std::endl;
-		std::cout << "couldn't robotomised " << this->_target << std::endl;
-	}
+	std::cout << this->_target << " was forgiven by Zaphod Beeblebrox" << std::endl;
 	return ;
 }

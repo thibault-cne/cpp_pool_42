@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:51 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 18:10:27 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:00:33 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class Bureaucrat
 
 		void		incGrade(void);
 		void		decGrade(void);
-		void		signForm(const AForm &src);
+		void		signForm(AForm &src);
 
 		/* Nested Class and Exceptions */
 
