@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:08 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/14 13:43:39 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 15:07:01 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@
 int	main(void)
 {
 	Intern	s;
+	Bureaucrat a("Toto", 1);
 
-	AForm *form = s.makeForm("RobotomyRequestForm", "Robot");
+	AForm *form = s.makeForm("robotomy request", "Robot");
 
-	std::cout << form->getName() << std::endl;
+	std::cout << *form << std::endl;
+	a.signForm(*form);
+	a.executeForm(*form);
+	delete form;
 	return (0);
 }

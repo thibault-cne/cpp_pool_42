@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 13:01:49 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/14 13:39:18 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 15:04:34 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Intern	&Intern::operator=(const Intern &src)
 
 AForm	*Intern::makeForm(std::string name, std::string target)
 {
-	std::string	names[] = {"RobotomyRequestForm", "PresidentialPardonForm", "ShrubberyCreationForm"};
+	std::string	names[] = {"robotomy request", "presidential pardonForm", "shrubbery creation"};
 	int	i = -1;
 	AForm	*(Intern::*_func[3])(std::string);
 
@@ -50,24 +50,15 @@ AForm	*Intern::makeForm(std::string name, std::string target)
 
 AForm	*Intern::rrf(std::string target)
 {
-	RobotomyRequestForm b(target), *a;
-
-	a = &b;
-	return (a);
+	return (new RobotomyRequestForm(target));
 }
 
 AForm	*Intern::scf(std::string target)
 {
-	ShrubberyCreationForm b(target), *a;
-
-	a = &b;
-	return (a);
+	return (new ShrubberyCreationForm(target));
 }
 
 AForm	*Intern::ppf(std::string target)
 {
-	PresidentialPardonForm b(target), *a;
-
-	a = &b;
-	return (a);
+	return(new PresidentialPardonForm(target));
 }
