@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:08 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 16:22:04 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:05:25 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,8 @@ int	main(void)
 		Bureaucrat b("Toto", 55);
 		std::cout << b << std::endl;
 		b.signForm(a);
-		a.beSigned(b);
 		std::cout << a << std::endl;
 		b.signForm(aa);
-		aa.beSigned(b);
 		std::cout << aa << std::endl;
 
 	}

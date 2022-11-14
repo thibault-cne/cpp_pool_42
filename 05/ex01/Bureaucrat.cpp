@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:56:34 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/10 16:47:54 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/14 12:06:02 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,15 +70,16 @@ void	Bureaucrat::decGrade(void)
 	return ;
 }
 
-void	Bureaucrat::signForm(const Form &src)
+void	Bureaucrat::signForm(Form &src)
 {
-	if (this->_grade > src.getSignGrade())
-	{
+	try {
+		src.beSigned(*this);
+		std::cout << getName() << " signed " << src.getName() << std::endl;
+	}
+	catch (const std::exception &e) {
 		std::cout << getName() << " couldn't sign " << src.getName()
 			<< " because his grade is too low" << std::endl;
 	}
-	else
-		std::cout << getName() << " signed " << src.getName() << std::endl;
 }
 
 const char	*Bureaucrat::GradeTooLowException::what() const throw()
@@ -93,6 +94,6 @@ const char	*Bureaucrat::GradeTooHighException::what() const throw()
 
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat &src)
 {
-	os << src.getName() << " his grade " << src.getGrade();
+	os << src.getName() << " is grade " << src.getGrade();
 	return (os);
 }
