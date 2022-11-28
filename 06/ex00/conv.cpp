@@ -6,34 +6,55 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:01:27 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/28 15:01:17 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/28 17:03:40 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.hpp"
 #include <string>
+#include <limits.h>
+#include <iomanip>
 
-void	convInt(std::string const s)
+void	convInt(double s)
 {
 	std::cout << "int: ";
-	std::cout << std::stoi(s) << std::endl;
+	long long int	i = s;
+	if (i < INT_MIN || i > INT_MAX)
+	{
+		std::cout << "impossible" << std::endl;
+		return ;
+	}
+	std::cout << i << std::endl;
 }
 
-void	convChar(std::string const s)
+void	convChar(double s)
 {
 	std::cout << "char: ";
-	char	c = std::stoi(s);
+	char	c = s;
+	if (c < -128 || c > 127)
+	{
+		std::cout << "impossible" << std::endl;
+		return ;
+	}
+	if (c < 32 || c > 127)
+	{
+		std::cout << "Non displayable" << std::endl;
+		return ;
+	}
 	std::cout << c << std::endl;
 }
 
-void	convFloat(std::string const s)
+void	convFloat(double s)
 {
 	std::cout << "float: ";
-	std::cout << std::stof(s) << std::endl;
+	float	f = s;
+	std::cout << std::fixed;
+	std::cout << f << "f" << std::endl;
 }
 
-void	convDouble(std::string const s)
+void	convDouble(double s)
 {
 	std::cout << "double: ";
-	std::cout << std::stod(s) << std::endl;
+	std::cout << std::fixed;
+	std::cout << s << std::endl;
 }
