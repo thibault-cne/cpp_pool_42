@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:48:40 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/21 18:01:13 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/11/28 15:14:36 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 
 int	main(int ac, char **av)
 {
-	if (ac < 1 || ac > 2)
-		return ;
+	if (ac < 2 || ac > 2)
+		return (std::cout << "Invalid number of arguments" << std::endl, 0);
 
-	return ;
+	std::string	str(av[1]);
+
+	convChar(str);
+	convInt(str);
+	convFloat(str);
+	convDouble(str);
+
+	return (1);
 }
