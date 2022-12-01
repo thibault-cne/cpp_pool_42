@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:00:01 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/28 16:41:36 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:57:07 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <iostream>
 # include <string>
 
-void	convInt(double s);
-void	convFloat(double s);
-void	convDouble(double s);
-void	convChar(double s);
+void	convInt(std::string s);
+void	convFloat(std::string s);
+void	convDouble(std::string s);
+void	convChar(std::string s);
 
 #endif

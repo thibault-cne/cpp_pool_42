@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:01:27 by lguillau          #+#    #+#             */
-/*   Updated: 2022/11/28 17:03:40 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/01 22:06:50 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 #include <limits.h>
 #include <iomanip>
 
-void	convInt(double s)
+bool	isNumber(std::string s)
+{
+	return (s.find_first_not_of("0123456789-") == string::npos);
+}
+
+void	convInt(std::string s)
 {
 	std::cout << "int: ";
 	long long int	i = s;
@@ -27,24 +32,37 @@ void	convInt(double s)
 	std::cout << i << std::endl;
 }
 
-void	convChar(double s)
+void	convChar(std::string s)
 {
 	std::cout << "char: ";
-	char	c = s;
-	if (c < -128 || c > 127)
+	char	c;
+	if (isNumber(s))
 	{
-		std::cout << "impossible" << std::endl;
-		return ;
+		c = std::atof(s.c_str());
+		if (c < -128 || c > 127)
+		{
+			std::cout << "impossible" << std::endl;
+			return ;
+		}
+		if (c < 32 || c > 127)
+		{
+			std::cout << "Non displayable" << std::endl;
+			return ;
+		}
+		std::cout << c << std::endl;
 	}
-	if (c < 32 || c > 127)
+	else
 	{
-		std::cout << "Non displayable" << std::endl;
-		return ;
+		if (s.size() == 1)
+		{
+			std::cout << s << std::endl;
+		}
+		else
+			std::cout << "impossible" << std::endl;
 	}
-	std::cout << c << std::endl;
 }
 
-void	convFloat(double s)
+void	convFloat(std::string s)
 {
 	std::cout << "float: ";
 	float	f = s;
@@ -52,7 +70,7 @@ void	convFloat(double s)
 	std::cout << f << "f" << std::endl;
 }
 
-void	convDouble(double s)
+void	convDouble(std::string s)
 {
 	std::cout << "double: ";
 	std::cout << std::fixed;
