@@ -6,11 +6,12 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 16:55:11 by lguillau          #+#    #+#              #
-#    Updated: 2022/12/02 12:57:14 by lguillau         ###   ########.fr        #
+#    Updated: 2022/12/06 19:25:09 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES	=	main.cpp \
+		Base.cpp \
 
 S_PATH	=	
 O_PATH	=	objs/

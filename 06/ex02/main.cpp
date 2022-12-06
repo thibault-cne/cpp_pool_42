@@ -6,11 +6,20 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:16:00 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/05 19:18:22 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:43:33 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "header.hpp"
+
 int	main(void)
 {
+	Base	b;
+	Base	*a;
+
+	a = b.generate();
+
+	delete a;
+
 	return (0);
 }

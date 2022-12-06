@@ -6,12 +6,14 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:51:55 By lguillau          #+#    #+#             */
-/*   Updated: 2022/12/05 19:57:38 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:42:20 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef C_HPP
 # define C_HPP
+
+#include "header.hpp"
 
 class C : public Base
 {
