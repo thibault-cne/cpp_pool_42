@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:58:23 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/07 13:13:29 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/07 14:24:57 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,21 @@ void	identify(Base *p)
 void	identify(Base &p)
 {
 	try {
-		p = dynamic_cast<A*>(p);
+		p = dynamic_cast<A&>(p);
 		std::cout << "A" << std::endl;
 	}
 	catch (const std::exception &e) {
-		std::cerr << e.what() << std::endl;
+	}
+	try {
+		p = dynamic_cast<B&>(p);
+		std::cout << "B" << std::endl;
+	}
+	catch (const std::exception &e) {
+	}
+	try {
+		p = dynamic_cast<C&>(p);
+		std::cout << "C" << std::endl;
+	}
+	catch (const std::exception &e) {
 	}
 }
