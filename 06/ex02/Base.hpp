@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 19:51:55 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/06 19:41:41 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:09:55 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 class Base
 {
 	public:
-		~Base();
-		Base	*generate(void);
-		void	identify(Base *p);
-		void	identify(Base &p);
+		virtual ~Base();
 };
+
+	Base	*generate(void);
+	void	identify(Base *p);
+	void	identify(Base &p);
 
 #endif
