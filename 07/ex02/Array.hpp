@@ -6,7 +6,7 @@
 /*   By: lguillau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:08:10 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/12 16:42:55 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/13 00:11:53 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,36 +21,55 @@ class Array
 {
 	public:
 
-		Array() {
+		Array()
+		{
 			this->array = new T[0];
+			this->_n = 0;
 		}
-
-		Array(unsigned int n) {
+		Array(unsigned int n)
+		{
 			this->array = new T[n];
+			this->_n = n;
 		}
-
-		Array(const Array &src) {
-			this->array = new T[src.size()];
+		Array(const Array<T> &src)
+		{
 			int	i = -1;
+
+			this->_n = src.size();
+			this->array = new T[this->_n];
+			while (++i < this->_n)
+				this->array[i] = src[i];
+		}
+		~Array()
+		{
+			delete[] this->array;
+		}
+		Array<T> &operator=(const Array<T> &src)
+		{
+			int	i = -1;
+
+			if (this->array)
+				delete[] this->array;
+			this->_n = src.size();
+			this->array = new T[this->_n];
 			while (++i < src.size())
-				array[i] = src.array[i];
-		}
-
-		~Array() {
-			delete[] array;
-		}
-
-		Array	&operator=(const Array &src) {
-			(void)src;
+				this->array[i] = src[i];
 			return (*this);
 		}
-
-		int	size(void) {
-			return (sizeof this->array / sizeof this->array[0]);
+		T	&operator[](unsigned int i) const
+		{
+			if (i >= (unsigned int)this->_n)
+				throw std::exception();
+			return (this->array[i]);
+		}
+		int	size(void) const
+		{
+			return (this->_n);
 		}
 
 	private:
 		T	*array;
+		int	_n;
 };
 
 #endif
