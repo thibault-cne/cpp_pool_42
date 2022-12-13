@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:41:51 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/13 16:01:51 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/13 22:27:41 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,18 @@
 
 #include <iostream>
 #include <string>
-#include <map>
-#include <list>
-#include <vector>
+#include <iterator>
+#include <stdexcept>
+#include <algorithm>
 
 template <typename T>
 void	easyfind(T a, int b)
 {
-
+	if (std::find(a.begin(), a.end(), b) == a.end())
+	{
+		throw (std::invalid_argument("No occurrence found"));
+	}
+	std::cout << b << std::endl;
 }
 
 #endif
