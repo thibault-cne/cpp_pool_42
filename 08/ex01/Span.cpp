@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:50:50 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/14 15:26:38 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:38:48 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ int	Span::longestSpan(void)
 
 	if (this->_v.size() <= 1)
 		throw (std::length_error("Span too small"));
-	span = std::max_element(this->_v.begin(), this->_v.end()) - std::min_element(this->_v.begin(), this->_v.end());
+	span = *std::max_element(this->_v.begin(), this->_v.end()) - *std::min_element(this->_v.begin(), this->_v.end());
 	return (span);
 }
