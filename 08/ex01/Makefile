@@ -6,11 +6,12 @@
 #    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 16:55:11 by lguillau          #+#    #+#              #
-#    Updated: 2022/12/13 00:08:54 by lguillau         ###   ########.fr        #
+#    Updated: 2022/12/14 14:55:05 by lguillau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FILES	=	main.cpp \
+		Span.cpp \
 
 S_PATH	=	
 O_PATH	=	objs/

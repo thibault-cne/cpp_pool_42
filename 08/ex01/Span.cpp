@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:50:50 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/13 23:44:04 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:26:38 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,30 @@ void	Span::addNumber(int nb)
 	this->_v.push_back(nb);
 }
 
-int	shortestSpan(void)
+int	Span::shortestSpan(void)
 {
-	int	span;
+	int	span = 2147483647;
+	int	tmp;
+	int	i = 0;
 
 	if (this->_v.size() <= 1)
-		throw (std::lenght_error("Spam too small"));
+		throw (std::length_error("Span too small"));
+	std::sort(this->_v.begin(), this->_v.end());
+	while ((unsigned long)++i < this->_v.size())
+	{
+		tmp = this->_v[i] - this->_v[i - 1];
+		if (tmp < span)
+			span = tmp;
+	}
+	return (span);
 }
 
-int	longestSpan(void)
+int	Span::longestSpan(void)
 {
 	int	span;
 
 	if (this->_v.size() <= 1)
-		throw (std::lenght_error("Spam too small"));
-	span = std::max_element(_v.begin(), _v.end)
-		- std::min_element(_v.begin(), _v.end);
+		throw (std::length_error("Span too small"));
+	span = std::max_element(this->_v.begin(), this->_v.end()) - std::min_element(this->_v.begin(), this->_v.end());
 	return (span);
 }

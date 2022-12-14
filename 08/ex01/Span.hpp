@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:45:10 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/13 23:44:09 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/14 15:25:09 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <string>
 #include <vector>
 #include <iterator>
+#include <stdexcept>
+#include <algorithm>
 
 class Span
 {
