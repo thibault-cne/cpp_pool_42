@@ -6,12 +6,12 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 16:50:27 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/11 17:00:01 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/15 17:41:50 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEMPLATE_HPP
-# define TEMPALTE_HPP
+# define TEMPLATE_HPP
 
 #include <iostream>
 
