@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:01:27 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/02 12:54:18 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:49:14 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	convInt(std::string s)
 	long long int	f;
 	if (isNumber(s))
 	{
-		f = static_cast<int>(std::atof(s.c_str()));
+		f = static_cast<long long int>(std::atof(s.c_str()));
 		if (f < INT_MIN || f > INT_MAX)
 		{
 			std::cout << "impossible" << std::endl;
