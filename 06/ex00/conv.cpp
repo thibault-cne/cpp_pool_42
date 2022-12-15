@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:01:27 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/15 15:49:14 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:53:51 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 bool	isNumber(std::string s)
 {
-	return (s.find_first_not_of("0123456789.-+") == std::string::npos);
+	if (s.size() > 1)
+		return (s.find_first_not_of("0123456789.-+f") == std::string::npos);
+	return (s.find_first_not_of("0123456789") == std::string::npos);
 }
 
 void	convInt(std::string s)
