@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:45:10 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/14 15:59:01 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:37:24 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Span
 		Span	&operator=(const Span &src);
 
 		void	addNumber(int nb);
+		void	superAddNumber(int n);
 
 		int	shortestSpan(void);
 		int	longestSpan(void);

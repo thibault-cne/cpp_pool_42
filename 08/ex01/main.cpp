@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:44:25 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/14 15:41:59 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:11:15 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,19 @@ int	main(void)
 
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
+	}
+
+	Span b(200);
+
+	std::cout << std::endl <<"Span with  super add number\n" << std::endl;
+	try {
+		b.addNumber(30);
+		b.superAddNumber(198);
+		std::cout << "Max Span: " <<  b.longestSpan() << std::endl;
+		std::cout << "Min Span: " << b.shortestSpan() << std::endl;
+	}
+	catch (const std::exception &e) {
+		std::cerr << e.what() << std::endl;
 	}
 	return (0);
 }
