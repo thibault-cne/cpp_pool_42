@@ -69,7 +69,7 @@ int	Span::longestSpan(void)
 	return (span);
 }
 
-void	Span::superAddNumber(int n)
+void	Span::superAddNumber(unsigned int n)
 {
 	if (n + this->_v.size() >= this->_n)
 		throw (std::out_of_range("not enough space in span"));
