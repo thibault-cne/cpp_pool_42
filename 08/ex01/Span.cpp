@@ -6,7 +6,7 @@
 /*   By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:50:50 by lguillau          #+#    #+#             */
-/*   Updated: 2022/12/16 15:10:23 by lguillau         ###   ########.fr       */
+/*   Updated: 2022/12/16 16:30:28 by lguillau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	Span::superAddNumber(unsigned int n)
 		throw (std::out_of_range("not enough space in span"));
 	std::vector<int>	tmp;
 	srand(time(NULL));
-	for (int i = 0; i < n; i++)
+	for (unsigned int i = 0; i < n; i++)
 		tmp.push_back(rand());
 	this->_v.insert(this->_v.end(), tmp.begin(), tmp.end());
 }
