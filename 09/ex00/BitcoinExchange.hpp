@@ -4,15 +4,11 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <fstream>
+#include <sstream>
+#include <stdlib.h>
 
-class Bitcoin
-{
-	public:
-		Bitcoin(std::string file);
+void	getData(std::map<std::string, double> &map);
 
-	private:
-		std::map _data;
-		std::string _input;
-};
 
 #endif
