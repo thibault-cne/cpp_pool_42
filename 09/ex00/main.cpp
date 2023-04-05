@@ -17,12 +17,13 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cout << "\033[31mError Args: ./btc <file>\033[0m" << std::endl;
+		std::cerr << "\033[31mError: could not open file.\033[0m" << std::endl;
 		exit(1);
 	}
 
 	std::string	file = av[1];
 	std::map<std::string, double> map;
 	getData(map);
+	getValue(file, map);
 	return (0);
 }

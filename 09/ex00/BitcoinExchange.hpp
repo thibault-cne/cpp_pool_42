@@ -9,6 +9,6 @@
 #include <stdlib.h>
 
 void	getData(std::map<std::string, double> &map);
-
+void	getValue(std::string &file, std::map<std::string, double> &map);
 
 #endif
