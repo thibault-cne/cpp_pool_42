@@ -3,12 +3,23 @@
 void	getValue(std::string &file, std::map<std::string, double> &map)
 {
 	std::ifstream	f(file.c_str());
+	std::string	s;
 	(void)map;
 
 	if (!f)
 	{
 		std::cerr << "\033[31mError: could not open file.\033[0m\n";
 		exit(1);
+	}
+	std::getline(f, s);
+	if (s != "date | value")
+	{
+		std::cerr << "\033[31mError: bad file format.\033[0m\n";
+		exit(1);
+	}
+	while (std::getline(f, s))
+	{
+
 	}
 }
 
