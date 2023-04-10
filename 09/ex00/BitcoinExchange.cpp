@@ -1,23 +1,47 @@
 #include <BitcoinExchange.hpp>
 
+static int	err_bad_input(std::string time)
+{
+	std::cerr << "\033[33mError: bad input => \033[0m" << time << std::endl;
+	return (0);
+}
+
 static int	check_time(std::string time)
 {
 	std::string	s;
-	int	i;
-
+	int	i = 0;
+	
 	if (!time.size())
 	{
-		std::cerr << "Error: no time provided\n";
+		std::cerr << "\033[33mError: no time provided\n\033[0m";
 		return (0);
 	}
+	if (time[time.size() - 1] == ' ')
+		time.erase(time.size() - 1);
 	std::stringstream	ss(time);
 
 	std::getline(ss, s, '-');
+	if (s.size() != 4)
+		return (err_bad_input(time));
 	while (std::getline(ss, s, '-'))
 	{
-		if (
+		int	nb;
+		std::istringstream ssd(s);
+		ssd >> nb;
+		if (s.size() != 2)
+			return (err_bad_input(time));
+		if (i == 0)
+			if (nb < 0 || nb > 12)
+				return (err_bad_input(time));
+		if (i == 1)
+			if (nb < 0 || nb > 31)
+				return (err_bad_input(time));
+		if (i > 1)
+			return (err_bad_input(time));
+		i++;
 	}
-
+	if (i != 2)
+		return (err_bad_input(time));
 	return (1);
 }
 
@@ -27,29 +51,50 @@ static double	check_price(std::string price)
 
 	if (!price.size())
 	{
-		std::cerr << "Error: no number provided\n";
+		std::cerr << "\033[33mError: no number provided.\n\033[0m";
 		return (-1);
 	}
 	std::istringstream ssd(price);
 	ssd >> num;
 	if (num < 0)
 	{
-		std::cerr << "Error: not a positive number\n";
+		std::cerr << "\033[33mError: not a positive number.\n\033[0m";
 		return (-1);
 	}
 	if (num > 1000)
 	{
-		std::cerr << "Error: too large number\n";
+		std::cerr << "\033[33mError: too large number.\n\033[0m";
 		return (-1);
 	}
 	return (num);
+}
+
+double	get_conv(std::string time, double num, std::map<std::string, double> &map)
+{
+	std::map<std::string, double>::iterator it = map.begin();
+
+	if (time[time.size() - 1] == ' ')
+		time.erase(time.size() - 1);
+	while (it != map.end())
+	{
+		if (time == it->first)
+			return (it->second * num);	
+		it++;
+	}
+	it = map.lower_bound(time);
+	if (it != map.begin())
+	{
+		it--;
+		return (it->second * num);
+	}
+	return (it->second * num);
 }
 
 void	getValue(std::string &file, std::map<std::string, double> &map)
 {
 	std::ifstream	f(file.c_str());
 	std::string	s;
-	(void)map;
+	double		res;
 
 	if (!f)
 	{
@@ -74,7 +119,8 @@ void	getValue(std::string &file, std::map<std::string, double> &map)
 		std::getline(ss, price, '|');
 		if ((num = check_price(price)) == -1)
 			continue ;
-		std::cout << "time: " << time << "price: " << num << std::endl;
+		res = get_conv(time, num, map);
+		std::cout << time << " => " << price << " = " << res << std::endl;
 	}
 }
 
