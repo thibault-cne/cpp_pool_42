@@ -1,5 +1,50 @@
 #include <BitcoinExchange.hpp>
 
+static int	check_time(std::string time)
+{
+	std::string	s;
+	int	i;
+
+	if (!time.size())
+	{
+		std::cerr << "Error: no time provided\n";
+		return (0);
+	}
+	std::stringstream	ss(time);
+
+	std::getline(ss, s, '-');
+	while (std::getline(ss, s, '-'))
+	{
+		if (
+	}
+
+	return (1);
+}
+
+static double	check_price(std::string price)
+{
+	double	num;
+
+	if (!price.size())
+	{
+		std::cerr << "Error: no number provided\n";
+		return (-1);
+	}
+	std::istringstream ssd(price);
+	ssd >> num;
+	if (num < 0)
+	{
+		std::cerr << "Error: not a positive number\n";
+		return (-1);
+	}
+	if (num > 1000)
+	{
+		std::cerr << "Error: too large number\n";
+		return (-1);
+	}
+	return (num);
+}
+
 void	getValue(std::string &file, std::map<std::string, double> &map)
 {
 	std::ifstream	f(file.c_str());
@@ -19,14 +64,23 @@ void	getValue(std::string &file, std::map<std::string, double> &map)
 	}
 	while (std::getline(f, s))
 	{
+		double		num;
+		std::string time, price;
+		std::stringstream ss(s);
 
+		std::getline(ss, time, '|');
+		if (!check_time(time))
+			continue ;
+		std::getline(ss, price, '|');
+		if ((num = check_price(price)) == -1)
+			continue ;
+		std::cout << "time: " << time << "price: " << num << std::endl;
 	}
 }
 
 void	getData(std::map<std::string, double> &map)
 {
-	std::string	s, time, price;
-	double		num;
+	std::string	s;
 	std::ifstream data("data.csv");
 
 	if (!data)
@@ -37,7 +91,10 @@ void	getData(std::map<std::string, double> &map)
 	std::getline(data, s);
 	while (std::getline(data, s))
 	{
+		double		num;
+		std::string time, price;
 		std::stringstream ss(s);
+
 		std::getline(ss, time, ',');
 		std::getline(ss, price, ',');
 		std::istringstream ssd(price);
