@@ -6,6 +6,7 @@
 # include <fstream>
 # include <sstream>
 # include <stdlib.h>
+# include <ctime>
 
 # include <vector> // here !
 # include <list> // here !
