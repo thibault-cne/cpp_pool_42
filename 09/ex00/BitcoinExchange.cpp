@@ -18,6 +18,8 @@ static int	check_time(std::string time)
 	}
 	if (time[time.size() - 1] == ' ')
 		time.erase(time.size() - 1);
+	if (time.size() != 10 || time.find_first_not_of("1234567890-") != std::string::npos)
+		return (err_bad_input(time));
 	std::stringstream	ss(time);
 
 	std::getline(ss, s, '-');
