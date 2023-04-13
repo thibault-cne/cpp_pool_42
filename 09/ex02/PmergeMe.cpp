@@ -1,6 +1,29 @@
 #include <PmergeMe.hpp>
 
-void    store_in_containers(std::list<int> & list, std::vector<int> & vector, char **av)
+void	merge(vector<int> &vec, int left, int mid, int right)
+{
+}
+
+void	mergeInsertionSort(vector<int> &vec, int left, int right)
+{
+	int	mid;
+
+	if (left < right)
+	{
+		if (right - left < 11)
+		{
+		}
+		else
+		{
+			mid = left + (right - left) / 2;
+			mergeInsertionSort(vec, 0, mid);
+			mergeInsertionSort(vec, mid + 1, right);
+			merge(vec, left, mid, right);
+		}
+	}
+}
+
+void    store_in_containers(std::list<int> &list, std::vector<int> &vector, char **av)
 {
 	int		i = 0;
 
