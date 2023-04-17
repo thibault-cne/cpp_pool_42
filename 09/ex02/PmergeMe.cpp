@@ -59,15 +59,15 @@ void	merge(std::vector<int> &vec, int left, int mid, int right)
 	}
 }
 
-void	mergeInsertionSort(std::vector<int> &vec, int left, int right)
+void	mergeInsertionSort(std::vector<int> &vec, int left, int right, int k)
 {
 	int	mid;
 
-	if (right - left >= 10)
+	if (right - left > (5 + k))
 	{
 			mid = left + (right - left) / 2;
-			mergeInsertionSort(vec, 0, mid);
-			mergeInsertionSort(vec, mid + 1, right);
+			mergeInsertionSort(vec, 0, mid, k);
+			mergeInsertionSort(vec, mid + 1, right, k);
 			merge(vec, left, mid, right);
 	}
 	else

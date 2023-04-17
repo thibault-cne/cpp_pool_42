@@ -58,7 +58,7 @@ int main(int ac, char **av)
 
 	store_in_containers(list, vector, av);
 
-	mergeInsertionSort(vector, 0, vector.size() -  1);
+	mergeInsertionSort(vector, 0, vector.size() -  1, vector.size() / 10);
 	std::clock_t end = std::clock();
 	double elapsed_time = double(end - start) / CLOCKS_PER_SEC;
 
