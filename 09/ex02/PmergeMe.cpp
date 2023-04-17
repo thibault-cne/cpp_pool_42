@@ -1,5 +1,7 @@
 #include <PmergeMe.hpp>
 
+/* ******************* vector ********************************* */
+
 void	insertionSort(std::vector<int> &vec, int left, int right)
 {
 	int	i, j;
@@ -73,6 +75,99 @@ void	mergeInsertionSort(std::vector<int> &vec, int left, int right, int k)
 	else
 		insertionSort(vec, left, right);
 }
+
+/* ******************* LIST ********************************* */
+
+void	insertionSort(std::list<int> &list, int left, int right)
+{
+	int	i, j;
+	int	tmp;
+	IT	a = list.begin() + left, b;
+
+	for (i = left; i <= right; i++)
+	{
+		j = i;
+		b = a;
+		while (j > 0 && *(b - 1) > *b)
+		{
+			tmp = *(b - 1);
+			*(b - 1) = *b;
+			*b = tmp;
+			j--;
+			b--;
+		}
+		a++;
+	}
+}
+
+void	merge(std::list<int> &list, int left, int mid, int right)
+{
+	int	leftLength = mid - left + 1;
+	int	rightLength = right - mid;
+	IT	it = list.begin();
+	for (int m = 0; m < left; m++)
+		it++;
+
+	std::list<int> leftList(leftLength);
+	std::list<int> rightList(rightLength);
+
+	for (int i = 0; i < leftLength; i++)
+		leftList.push_back(*(it + i));
+	it = list.begin() + mid + 1;
+	for (int j = 0; j < rightLength; j++)
+		rightList.push_back(*(it + j));
+
+	IT	leftIndex = leftList.begin();
+	IT	rightIndex = rightList.begin();
+
+	it = list.begin();
+
+	for (int k = left; k <= right; k++)
+	{
+		if (rightIndex == rightList.end())
+		{
+			*it = *leftIndex;
+			it++;
+			leftIndex++;
+
+		}
+		else if (leftIndex == leftList.end())
+		{
+			*it = *rightIndex;
+			it++;
+			rightIndex++;
+		}
+		else if (*rightIndex >= *leftIndex)
+		{
+			*it = *leftIndex;
+			it++;
+			leftIndex++;
+		}
+		else
+		{
+			*it = *rightIndex;
+			it++;
+			rightIndex++;
+		}
+	}
+}
+
+void	mergeInsertionSort(std::list<int> &list, int left, int right, int k)
+{
+	int	mid;
+
+	if (right - left > (5 + k))
+	{
+			mid = left + (right - left) / 2;
+			mergeInsertionSort(list, 0, mid, k);
+			mergeInsertionSort(list, mid + 1, right, k);
+			merge(list, left, mid, right);
+	}
+	else
+		insertionSort(list, left, right);
+}
+
+/* ************************************************** */
 
 void    store_in_containers(std::list<int> &list, std::vector<int> &vector, char **av)
 {
