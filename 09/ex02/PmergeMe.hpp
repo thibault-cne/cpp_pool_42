@@ -10,13 +10,12 @@
 # include <algorithm>
 
 # include <vector> // here !
-# include <list> // here !
+# include <deque> // here !
 
-# define IT std::list<int>::iterator
 
-void	store_in_containers(std::list<int> & list, std::vector<int> & vector, char **av);
+void	storeInContainers(std::deque<int> &deque, std::vector<int> &vector, char **av);
 
 void    mergeInsertionSort(std::vector<int> &vec, int left, int right, int k);
-void    mergeInsertionSort(std::list<int> &list, IT left, IT right, int k);
+void    mergeInsertionSort(std::deque<int> &deque, int left, int right, int k);
 
 #endif

@@ -76,89 +76,87 @@ void	mergeInsertionSort(std::vector<int> &vec, int left, int right, int k)
 		insertionSort(vec, left, right);
 }
 
-/* ******************* LIST ********************************* */
+/* ******************* DEQUE ********************************* */
 
-void	insertionSort(std::list<int> &list, IT left, IT right)
+void	insertionSort(std::deque<int> &deque, int left, int right)
 {
-	IT	i, j;
+	int	i, j;
 	int	tmp;
 
-	for (i = left; i != right; i++)
+	for (i = left; i <= right; i++)
 	{
 		j = i;
-		while (j != left && *std::prev(j) > *j)
+		while (j > 0 && deque[j - 1] > deque[j])
 		{
-			tmp = *std::prev(j);
-			*std::prev(j) = *j;
-			*j = tmp;
+			tmp = deque[j - 1];
+			deque[j - 1] = deque[j];
+			deque[j] = tmp;
 			j--;
 		}
 	}
 }
 
-void	merge(std::list<int> &list, IT left, IT mid, IT right)
+void	merge(std::deque<int> &deque, int left, int mid, int right)
 {
-	(void)list;
-	int	leftLength = std::distance(left, mid) + 1;
-	int	rightLength = std::distance(mid, right);
+	int	leftLength = mid - left + 1;
+	int	rightLength = right - mid;
 
-	std::list<int> leftList;
-	std::list<int> rightList;
+	std::deque<int> leftdeque(leftLength);
+	std::deque<int> rightdeque(rightLength);
 
 	for (int i = 0; i < leftLength; i++)
-		leftList.push_back(*(std::distance(left, i)));
+		leftdeque[i] = deque[left + i];
 	for (int j = 0; j < rightLength; j++)
-		rightList.push_back(*(std::distance(mid, right)));
+		rightdeque[j] = deque[mid + 1 + j];
 
-	IT	leftIndex = leftList.begin();
-	IT	rightIndex = rightList.begin();
+	int	leftIndex = 0;
+	int	rightIndex = 0;
 
-
-	for (IT it = left; it != right; it++)
+	for (int k = left; k <= right; k++)
 	{
-		if (rightIndex == rightList.end())
+		if (rightIndex == rightLength)
 		{
-			*it = *leftIndex;
+			deque[k] = leftdeque[leftIndex];
 			leftIndex++;
-
 		}
-		else if (leftIndex == leftList.end())
+		else if (leftIndex == leftLength)
 		{
-			*it = *rightIndex;
+			deque[k] = rightdeque[rightIndex];
 			rightIndex++;
 		}
-		else if (*rightIndex >= *leftIndex)
+		else if (rightdeque[rightIndex] >= leftdeque[leftIndex])
 		{
-			*it = *leftIndex;
+			deque[k] = leftdeque[leftIndex];
 			leftIndex++;
 		}
 		else
 		{
-			*it = *rightIndex;
+			deque[k] = rightdeque[rightIndex];
 			rightIndex++;
 		}
 	}
 }
 
-void	mergeInsertionSort(std::list<int> &list, IT left, IT right, int k)
+void	mergeInsertionSort(std::deque<int> &deque, int left, int right, int k)
 {
-	IT	mid;
+	int	mid;
 
-	if (std::distance(left, right) > (5 + k))
+	if (right - left > (5 + k))
 	{
-			mid = left;
-			std::advance(mid, std::distance(left, right) / 2);
-			mergeInsertionSort(list, left, mid, k);
-			mergeInsertionSort(list, std::next(mid), right, k);
-			merge(list, left, mid, right);
+			mid = left + (right - left) / 2;
+			mergeInsertionSort(deque, 0, mid, k);
+			mergeInsertionSort(deque, mid + 1, right, k);
+			merge(deque, left, mid, right);
 	}
 	else
-		insertionSort(list, left, right);
+		insertionSort(deque, left, right);
 }
 
-/* ************************************************** */
+/* ******************* DEQUE ********************************* */
 
-void    store_in_containers(std::list<int> &list, std::vector<int> &vector, char **av)
+/* *********************************************************** */
+
+void    storeInContainers(std::deque<int> &deque, std::vector<int> &vector, char **av)
 {
 	int		i = 0;
 
@@ -180,6 +178,6 @@ void    store_in_containers(std::list<int> &list, std::vector<int> &vector, char
 			exit(1);
 		}
 		vector.push_back((int)nb);
-		list.push_back((int)nb);
+		deque.push_back((int)nb);
 	}
 }
