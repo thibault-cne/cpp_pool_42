@@ -1,3 +1,5 @@
+#define DEBUG 0
+
 #include "PmergeMe.hpp"
 
 void	isSorted(std::deque<int> &deque)
@@ -92,18 +94,20 @@ int main(int ac, char **av)
 	coutV(vector);
 	elapsed_time = double(end - start) / CLOCKS_PER_SEC;
 	std::cout << "Time to process a range of " << vector.size()
-		<< " with std::vector : " << elapsed_time * 1000 << " useconds\n";
+		<< " with std::vector : " << elapsed_time * 1000 << " ms\n";
 
 	start = std::clock();
 	mergeInsertionSort(deque, 0, deque.size() -  1, deque.size() / 10);
 	end = std::clock();
 	elapsed_time = double(end - start) / CLOCKS_PER_SEC;
 	std::cout << "Time to process a range of " << deque.size()
-		<< " with std::deque : " << elapsed_time * 1000<< " useconds\n";
+		<< " with std::deque : " << elapsed_time * 1000<< " ms\n";
 
 
-	isSorted(vector);
-	isSorted(deque);
-
+	if (DEBUG)
+	{
+		isSorted(vector);
+		isSorted(deque);
+	}
 	return (0);
 }
