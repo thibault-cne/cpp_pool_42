@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lguillau <lguillau@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/15 11:36:03 by lguillau          #+#    #+#              #
-#    Updated: 2022/09/19 14:36:45 by lguillau         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 FILES	=	Account.cpp \
 		tests.cpp
 
@@ -20,9 +8,9 @@ I_PATH	=	includes/
 SRCS	=	${addprefix ${S_PATH}, ${FILES}}
 OBJS	=	${addprefix ${O_PATH}, ${FILES:.cpp=.o}}
 
-NAME	=	test.exe
+NAME	=	test
 
-CC	=	g++
+CC	=	c++
 
 RM	=	rm -rf
 
